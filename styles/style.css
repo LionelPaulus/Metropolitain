@@ -1,0 +1,12 @@
+#play{
+    margin:190px 0px 0px 62px;
+    color:#fff;
+    width:162px;
+    height:70px;
+    border:none;
+    cursor:pointer;
+    background:rgb(96, 75, 75);
+    font-size:27px;
+    border-radius:9px;
+    position: absolute;
+}

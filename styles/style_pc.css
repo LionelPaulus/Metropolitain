@@ -1,42 +1,69 @@
 body {
-font-family: 'Raleway'; 
-    /*    background:url(https://pbs.twimg.com/media/B9BWXDbIQAApKza.png:large);*/
-    background:url(../imgs/Background.jpg);
+    font-family: 'Raleway';
+    background: url(../imgs/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-article{
+
+
+/*    ----- Header ------     */
+
+
+
+header {
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    min-height: 90px;
+    width: 500px;
     margin: auto;
-    width:730px;
+    border-radius: 7pt;
+    background: #ffeebb;
+    border: 5px solid #fce293;
 }
 
-header, footer {
-   display: block;
-   margin: 4px;
-   padding: 5px;
-   min-height: 90px;
-    width: 700px;
-    margin:auto;
-   border-radius: 7pt;
-   background: #ffeebb;
+header > img {
+    padding-left:50px;
 }
 
 
-header > p, footer > p{
-    text-align: center;
-    font-size:30px;
+
+/*    ----- Container ------     */
+
+
+
+article {
+    margin: auto;
+    width: 730px;
+    position:relative;
 }
 
-iframe{
-    margin:auto;
-   position:absolute;
-     top:530px;
+iframe {
+    margin: auto;
+    position: absolute;
+    top: 181px;
     bottom: 0px;
     left: 14px;
     right: 0px;
-    cursor:crosshair;
-	z-index:9;
-    overflow:hidden;
+}
+
+
+/*    ----- Footer ------     */
+
+
+
+footer {
+    display: block;
+    height: 50px;
+    width: 600px;
+    margin: auto;
+    background: #dcffeb;
+}
+
+footer > p {
+    text-align: center;
+    font-size: 30px;
+    padding-top:8px;
 }
