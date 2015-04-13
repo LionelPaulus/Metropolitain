@@ -1,6 +1,6 @@
 {
     "name": "Niveau 1",
-    "stations": ["test", "test2", "test3"],
+    "stations": ["Château de Vincennes", "Bérault", "Saint-Mandé"],
     "questions": [
         {
             "title": "Quelle est la couleur du cheval blanc d'Henri IV ?",
