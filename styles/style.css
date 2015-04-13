@@ -1,62 +1,11 @@
 body {
-    font-family: 'Raleway'; background:url(https://pbs.twimg.com/media/B9BWXDbIQAApKza.png:large);
+font-family: 'Raleway'; 
+    /*    background:url(https://pbs.twimg.com/media/B9BWXDbIQAApKza.png:large);*/
+    background:url(../imgs/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  }
-
-/*
-  #main {
-   min-height: 800px;
-   margin: 0px;
-   padding: 0px;
-   display: -webkit-flex;
-   display:         flex;
-   -webkit-flex-flow: row;
-           flex-flow: row;
-   }
-*/
-
-/*
-
-  #main > article {
-   margin: 4px;
-   padding: 5px;
-   border-radius: 7pt;
-   background: rgba(152, 221, 136, 0.2);
-   -webkit-flex: 3 1 60%;
-           flex: 3 1 60%;
-   -webkit-order: 2;
-           order: 2;
-   }
-*/
-
-/*
-  #main > nav {
-   margin: 4px;
-   padding: 5px;
-   border: 1px solid #8888bb;
-   border-radius: 7pt;
-   background: #ccccff;
-   -webkit-flex: 1 6 20%;
-           flex: 1 6 20%;
-   -webkit-order: 1;
-           order: 1;
-   }
-  
-  #main > aside {
-   margin: 4px;
-   padding: 5px;
-   border: 1px solid #8888bb;
-   border-radius: 7pt;
-   background: #ccccff;
-   -webkit-flex: 1 6 20%;
-           flex: 1 6 20%;
-   -webkit-order: 3;
-           order: 3;
-   }
- 
-*/
+}
 
 article{
     margin: auto;
@@ -68,6 +17,8 @@ header, footer {
    margin: 4px;
    padding: 5px;
    min-height: 90px;
+    width: 700px;
+    margin:auto;
    border-radius: 7pt;
    background: #ffeebb;
 }
@@ -77,22 +28,3 @@ header > p, footer > p{
     text-align: center;
     font-size:30px;
 }
- 
-  /* Too narrow to support three columns
-  @media all and (max-width: 640px) {
-  
-   #main, #page {
-    -webkit-flex-flow: column;
-            flex-direction: column;
-   }
-
-   #main > article, #main > nav, #main > aside {
-    -webkit-order: 0;
-            order: 0;
-   }
-  
-   #main > nav, #main > aside, header, footer {
-    min-height: 50px;
-    max-height: 50px;
-   }
-  } */
