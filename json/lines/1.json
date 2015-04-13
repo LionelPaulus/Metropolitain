@@ -1,4 +1,16 @@
 {
     "name": "Niveau 1",
-    "stations": ["test", "test2", "test3"]
+    "stations": ["test", "test2", "test3"],
+    "questions": [
+        {
+            "title": "Quelle est la couleur du cheval blanc d'Henri IV ?",
+            "answers": ["Rouge", "Vert", "Bleu", "Blanc"],
+            "correct": 4
+        },
+        {
+            "title": "Quelle est la couleur du cheval vert d'Henri IV ?",
+            "answers": ["Rouge", "Vert", "Bleu", "Blanc"],
+            "correct": 4
+        }
+    ]
 }
