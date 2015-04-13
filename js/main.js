@@ -7,15 +7,7 @@ function user_data(){ // Get and update score, station, tickets, line with cooki
     
 }
 
-<<<<<<< HEAD
-function get_question(){ // 
-    
-}
-
-function test(){
-=======
 function get_question(){ // Find a question in the JSON file
-<<<<<<< HEAD
     var questions = JSON.parse(text); 
     var step = null; // Number of the question
     $.getJSON( "../json/lines/1.json", function( json ) {
@@ -23,13 +15,7 @@ function get_question(){ // Find a question in the JSON file
     });
     
 }
-get_question();
 
 function bad_guy(){ // Ticket checker witch come 2 times at the first questions and 1 time after
     
 }
-=======
-    var step = null; // 
->>>>>>> origin/master
-}
->>>>>>> origin/master
