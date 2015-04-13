@@ -5,12 +5,12 @@
         {
             "title": "Quelle est la couleur du cheval blanc d'Henri IV ?",
             "answers": ["Rouge", "Vert", "Bleu", "Blanc"],
-            "correct": 4
+            "correct": 3
         },
         {
             "title": "Quelle est la couleur du cheval vert d'Henri IV ?",
             "answers": ["Rouge", "Vert", "Bleu", "Blanc"],
-            "correct": 4
+            "correct": 3
         }
     ]
 }

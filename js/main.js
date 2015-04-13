@@ -11,8 +11,7 @@ function get_question(){ // Find a question in the JSON file
     var step = null; // Number of the question
     $( document ).ready(function() {
         $.getJSON( "http://lionelpaulus.github.io/json/lines/1.json", function( json ) {
-          console.log( "JSON Data: " + json.stations[0] );
-          console.log( "JSON Data: " + json.questions[0].answers[0] );
+          console.log( json.questions[0].answers[0] );
         });
     });
     
