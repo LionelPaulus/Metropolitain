@@ -9,3 +9,6 @@ function user_data(){ // Get and update score, station, tickets, line with cooki
 function get_question(){ // 
     
 }
+
+function test(){
+}
