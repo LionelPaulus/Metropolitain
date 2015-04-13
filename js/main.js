@@ -1,5 +1,6 @@
 // Tests
 Cookies.set('boisson', 'eau pétillante');
+conole.log(Cookies.get('boisson'));
 
 // Functions
 function user_data() { // Get and update score, station, tickets, line with cookies
