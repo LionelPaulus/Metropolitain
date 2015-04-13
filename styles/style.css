@@ -1,6 +1,5 @@
 body {
-    font-family: 'Raleway';
-   background:url(../imgs/bg.png);
+    font-family: 'Raleway'; background:url(https://pbs.twimg.com/media/B9BWXDbIQAApKza.png:large);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -59,10 +58,9 @@ body {
  
 */
 
-img{
+article{
     margin: auto;
-    left:50%;
-    right: 50%;
+    width:730px;
 }
 
 header, footer {
