@@ -15,6 +15,7 @@ function get_question(){ // Find a question in the JSON file
     });
     
 }
+get_question();
 
 function bad_guy(){ // Ticket checker witch come 2 times at the first questions and 1 time after
     
