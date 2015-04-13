@@ -11,7 +11,7 @@ function user_data() { // Get and update score, station, tickets, line with cook
 
 function get_question(user_response) { // Find a question in the JSON file
     var step = 0; // Number of the question
-    if (id == null) {
+    if (user_response == null) {
         step += 1;
         $(document).ready(function () {
             $.getJSON("http://lionelpaulus.github.io/json/lines/1.json", function (json) {
