@@ -1,13 +1,29 @@
 // Tests
-Cookies.set('boisson', 'eau pétillante');
-console.log(Cookies.get('boisson'));
+
+// Settings
 
 // Functions
 function user_data() { // Get and update score, station, tickets, line with cookies
-    var score = null;
-    var line = null;
-    var station = null;
-
+    if(Cookies.get('score') == undefined){
+        // General cookies settings
+        Cookies.defaults = {
+            expires: Infinity
+        };
+        
+        Cookies.set('score', 0);
+        var score = 0;
+        Cookies.set('actual_line', 0);
+        var actual_line = 0;
+        Cookies.set('actual_progression', 0);
+        var actual_progression = 0;
+        Cookies.set('lines_finished', 0); // Levels accomplished
+        var lines_finished = 0;
+    }else{
+        var score = Cookies.get('score');
+        var actual_line = Cookies.get('actual_line');
+        var actual_progression = Cookies.get('actual_progression');
+        var lines_finished = Cookies.get('lines_finished');
+    }
 }
 
 function get_question(user_response) { // Find a question in the JSON file
@@ -36,4 +52,23 @@ get_question();
 
 function bad_guy() { // Ticket checker witch come 2 times at the first questions and 1 time after
 
+}
+
+function play_sound(sound_name){
+    if(no_sound == undefined){
+        if(sound_name == "example"){
+            $("#example").play(); // ID of the sound
+        }
+    }
+}
+
+function stop_souds(){ // Pause every sound
+    /// MUST ADD CLASS "media" TO EVERY SOUND
+    var no_sound = true;
+    var media = document.getElementsByClassName('media'),
+        i = media.length;
+
+    while (i--) {
+        media[i].pause();
+    }
 }
