@@ -4,10 +4,13 @@ body {
 
 #question {
     width:400px;
+    height:100px;
     border:1px solid black;
 }
 
 .answers {
     width:400px;
     display:block;
+    height:50px;
+    
 }

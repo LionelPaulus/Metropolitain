@@ -1,42 +1,12 @@
-body {
-font-family: 'Raleway'; 
-    /*    background:url(https://pbs.twimg.com/media/B9BWXDbIQAApKza.png:large);*/
-    background:url(../imgs/Background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-article{
-    margin: auto;
-    width:730px;
-}
-
-header, footer {
-   display: block;
-   margin: 4px;
-   padding: 5px;
-   min-height: 90px;
-    width: 700px;
-    margin:auto;
-   border-radius: 7pt;
-   background: #ffeebb;
-}
-
-
-header > p, footer > p{
-    text-align: center;
-    font-size:30px;
-}
-
-iframe{
-    margin:auto;
-   position:absolute;
-     top:530px;
-    bottom: 0px;
-    left: 14px;
-    right: 0px;
-    cursor:crosshair;
-	z-index:9;
-    overflow:hidden;
+#play{
+    margin:190px 0px 0px 62px;
+    color:#fff;
+    width:162px;
+    height:70px;
+    border:none;
+    cursor:pointer;
+    background:rgb(96, 75, 75);
+    font-size:27px;
+    border-radius:9px;
+    position: absolute;
 }
