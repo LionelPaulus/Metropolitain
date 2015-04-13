@@ -1,0 +1,13 @@
+body {
+    margin: 0 auto;
+}
+
+#question {
+    width:400px;
+    border:1px solid black;
+}
+
+.answers {
+    width:400px;
+    display:block;
+}

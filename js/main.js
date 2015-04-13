@@ -8,10 +8,18 @@ function user_data(){ // Get and update score, station, tickets, line with cooki
 }
 
 function get_question(){ // Find a question in the JSON file
-    var step = null; // Number of the question
+    var step = 0; // Number of the question
     $( document ).ready(function() {
         $.getJSON( "http://lionelpaulus.github.io/json/lines/1.json", function( json ) {
-          console.log( json.questions[0].answers[0] );
+          //console.log( json.questions[step].title );
+            document.getElementById("question").innerHTML = json.questions[step].title;
+            
+            document.getElementById("rep1").innerHTML = json.questions[step].answers[0];
+            document.getElementById("rep2").innerHTML = json.questions[step].answers[1];
+            document.getElementById("rep3").innerHTML = json.questions[step].answers[2];
+            
+            
+            
         });
     });
     
@@ -21,3 +29,5 @@ get_question();
 function bad_guy(){ // Ticket checker witch come 2 times at the first questions and 1 time after
     
 }
+
+
