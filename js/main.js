@@ -31,12 +31,12 @@ function get_question(user_response) { // Find a question in the JSON file
     if (user_response == null) {
         step += 1;
         $(document).ready(function () {
-            $.getJSON("http://lionelpaulus.github.io/json/lines/1.json", function (json) {
-                //console.log( json.questions[step].title );
+            $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
                 document.getElementById("question").innerHTML = json.questions[step].title;
                 document.getElementById("rep1").innerHTML = json.questions[step].answers[0];
                 document.getElementById("rep2").innerHTML = json.questions[step].answers[1];
                 document.getElementById("rep3").innerHTML = json.questions[step].answers[2];
+                document.getElementById("rep4").innerHTML = json.questions[step].answers[3];
             });
         });
     }else{
