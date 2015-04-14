@@ -38,6 +38,11 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
 }
 user_cookies(); // Get user data with cookies
 
+function reset_score(){ /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    user_cookies("score", 0);
+    document.getElementById("score").innerHTML = "Score: " + user_data["score"];
+}
+
 function get_question(user_response) { // Find a question in the JSON file
     if (user_response == null) {
         $(document).ready(function () {
