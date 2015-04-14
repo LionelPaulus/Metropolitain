@@ -1,4 +1,4 @@
-body{
+.bg{
     width: 100%;
     height: auto;
     background: url(../imgs/capture.jpg);
@@ -16,26 +16,17 @@ body{
     background:rgb(96, 75, 75);
     font-size:27px;
     border-radius:9px;
-    position: absolute;
-}
-
-#container2{
-    width: 100%;
-    height: auto;
-    background: url(../imgs/capture.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 #container{
     background:#e2e2e2;
-    width: 100%;
-    height: auto;
+    text-align: center;
 }
 
 #container > p {
-    margin:31.8px 0px 31.8px 24.7px;
+    text-align: center;
+    margin:0px 0px 31.8px 24.7px;
+    padding-top:31.8px;
 }
 
 
