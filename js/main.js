@@ -10,7 +10,7 @@ Cookies.defaults = {
 // Functions
 function user_cookies(name,value) { // Get and update score, station, tickets, line with cookies    
     if((name != null)&&(value != null)){
-        Cookies.set(name, value, { expires: Infinity });
+        Cookies.set(name, value, { expires: 999999999999 });
         user_data[name] = value;
     }else if(Cookies.get('score') == undefined){
         Cookies.set('score', 0);
