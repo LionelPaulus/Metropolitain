@@ -117,3 +117,5 @@ function stop_souds(){ // Pause every sound
         media[i].pause();
     }
 }
+
+// Hello
