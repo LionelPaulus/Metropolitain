@@ -28,10 +28,7 @@ function user_cookies(name,value) { // Get and update score, station, tickets, l
         user_data["lines_finished"] = Cookies.get('lines_finished');
     }
 }
-
-user_cookies();
-user_cookies("score", 10);
-console.log(user_data["score"]);
+user_cookies(); // Get user data with cookies
 
 function get_question(user_response) { // Find a question in the JSON file
     console.log(user_response);
