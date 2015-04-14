@@ -34,6 +34,7 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
         user_data["actual_progression"] = Cookies.get('actual_progression');
         user_data["lines_finished"] = Cookies.get('lines_finished');
     }
+    document.getElementById("score").innerHTML = "Score: " + user_data["score"];
 }
 user_cookies(); // Get user data with cookies
 
@@ -63,6 +64,7 @@ function get_question(user_response) { // Find a question in the JSON file
         if (user_response == correct) {
             console.log("correct");
             user_cookies("score", (user_data["score"] + 1));
+            document.getElementById("score").innerHTML = "Score: " + user_data["score"];
         } else {
             console.log("faux");
         }
@@ -104,29 +106,19 @@ function chrono() {
         } else {
             duree--;
         }
-    
-    
 
     document.getElementById("temps").innerHTML = "durée=" + duree;
     document.getElementById("station").innerHTML = "station=" + station;
     
-    if(station == stationTotale){clearInterval(timerCh);}
-
-    
-        
+    if(station == stationTotale){clearInterval(timerCh);}    
 }
 
 function resetChrono() {
-    
     duree = 6;
     timerCh = setInterval("chrono()", 1000);
     chrono();
 }
-
-
 chrono();
-
-
 
 function play_sound(sound_name) {
     if (no_sound == undefined) {
