@@ -1,10 +1,6 @@
 // Tests
-<<<<<<< Updated upstream
 
 // Settings
-=======
-//Cookies.set('boisson', 'eau pétillante');
->>>>>>> Stashed changes
 
 // Functions
 function user_data() { // Get and update score, station, tickets, line with cookies
@@ -32,12 +28,7 @@ function user_data() { // Get and update score, station, tickets, line with cook
 
 function get_question(user_response) { // Find a question in the JSON file
     var step = 0; // Number of the question
-<<<<<<< Updated upstream
     if (user_response == null) {
-=======
-
-    if (id == null) {
->>>>>>> Stashed changes
         step += 1;
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
@@ -45,42 +36,8 @@ function get_question(user_response) { // Find a question in the JSON file
                 document.getElementById("rep1").innerHTML = json.questions[step].answers[0];
                 document.getElementById("rep2").innerHTML = json.questions[step].answers[1];
                 document.getElementById("rep3").innerHTML = json.questions[step].answers[2];
-<<<<<<< Updated upstream
                 document.getElementById("rep4").innerHTML = json.questions[step].answers[3];
             });
-=======
-                document.getElementById("rep4").innerHTML = json.questions[step].answers[3]
-            });
-        });
-    }}
-
-    /*$( document ).ready(function() {
-        $.getJSON( "http://lionelpaulus.github.io/json/lines/1.json", function( json ) {
-          //console.log( json.questions[step].title );
-            document.getElementById("question").innerHTML = json.questions[step].title;
-            
-            document.getElementById("rep1").innerHTML = json.questions[step].answers[0];
-            document.getElementById("rep2").innerHTML = json.questions[step].answers[1];
-            document.getElementById("rep3").innerHTML = json.questions[step].answers[2];
-            document.getElementById("rep4").innerHTML = json.questions[step].answers[3];
-            */
-            
-        /*$('[data-response]').on('click', function(){
-            var response = $(this).attr('data-response');
-            var correct = json.questions[step].correct;
-            
-            if (response == correct)
-            { 
-                console.log('good');
-            }
-            
-        });
-            */
-   
-            
-            
-/*>>>>>>> Stashed changes
->>>>>>> Stashed changes
         });
     }else{
         var correct = json.questions[step].correct;
@@ -90,9 +47,7 @@ function get_question(user_response) { // Find a question in the JSON file
             console.log("faux");
         }
     }
-}*/
-            
-            
+}
 get_question();
 
 function bad_guy() { // Ticket checker witch come 2 times at the first questions and 1 time after
@@ -117,5 +72,3 @@ function stop_souds(){ // Pause every sound
         media[i].pause();
     }
 }
-
-// Hello
