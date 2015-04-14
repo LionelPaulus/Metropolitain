@@ -3,21 +3,23 @@
 // Settings
 
 // Functions
-function user_data() { // Get and update score, station, tickets, line with cookies
+function user_data(name,value) { // Get and update score, station, tickets, line with cookies
+    // General cookies settings
+    Cookies.defaults = {
+        expires: Infinity
+    };
     if(Cookies.get('score') == undefined){
-        // General cookies settings
-        Cookies.defaults = {
-            expires: Infinity
-        };
-        
         Cookies.set('score', 0);
-        var score = 0;
+        var user_data["score"] = 0;
         Cookies.set('actual_line', 0);
-        var actual_line = 0;
+        var user_data["actual_line"] = 0;
         Cookies.set('actual_progression', 0);
-        var actual_progression = 0;
+        var user_data["actual_progression"] = 0;
         Cookies.set('lines_finished', 0); // Levels accomplished
-        var lines_finished = 0;
+        var user_data["lines_finished"] = 0;
+    }else if((name != null)&&(value != null)){
+        Cookies.set(name, value);
+        user_data[name] = value;
     }else{
         var score = Cookies.get('score');
         var actual_line = Cookies.get('actual_line');
