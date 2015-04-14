@@ -346,19 +346,9 @@
             "Porte d'Orleans-Porte de Clignancourt",
             "La Defense-Chateau de Vincennes",
             "Place d'Italie-Bobigny",
-            "Charles de GaullLLe - ETOILE-NATION"
+            "Charles de GaullLLe / ETOILE-NATION"
          ],
          "correct":1
-      },
-      {
-         "title":"Combien de lignes sont en partie aériennes?",
-         "answers":[
-            "Cinq (les 1, 2, 5, 6 et 13)",
-            "Deux (les 6 et 2)",
-            "Quatre (les 1, 2, 5 et 6) ",
-            "Trois (les 1, 5, 8)"
-         ],
-         "correct":0
       },
       {
          "title":"Où faut-il descendre pour visiter le musée d'Orsay ?",

@@ -56,7 +56,7 @@ function reset_score() { /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function get_question(user_response) { // Find a question in the JSON file
     if (user_response == null) {
         $(document).ready(function () {
-            $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
+            $.getJSON("http://metropolitain.tk/json/line_1.json", function (json) {
                 console.log("step: " + step);
                 // Tickets needed to complete the level
                 if(tickets_to_end == 0){
@@ -100,7 +100,7 @@ get_question();
 
 function update_stations() {
     $(document).ready(function () {
-        $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
+        $.getJSON("http://metropolitain.tk/json/line_1.json", function (json) {
             station_from = json.stations[station - 1];
             station_to = json.stations[station];
 
