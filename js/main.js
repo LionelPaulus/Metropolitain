@@ -3,12 +3,16 @@
 // Settings
 var step = 0; // Number of the question
 var station = 1;
-var stationTotale = 4;
+var stationTotale = 25;
 var correct = null; // Correct answer of the question
 var user_data = [];
 var duree = 6;
 var station_from;
 var station_to;
+var passage1 = Math.floor((Math.random()*4)+1);
+        var passage2 = Math.floor((Math.random()*5)+8);
+        var passage3 = Math.floor((Math.random()*7)+18);
+
 // General cookies settings
 Cookies.defaults = {
     expires: Infinity
@@ -74,7 +78,9 @@ function get_question(user_response) { // Find a question in the JSON file
         get_question();
     }
 }
+bad_guy();
 get_question();
+
 
 function update_stations() {
     $(document).ready(function () {
@@ -90,7 +96,25 @@ function update_stations() {
 update_stations(); // First required update_stations
 
 function bad_guy() { // Ticket checker witch come 2 times at the first questions and 1 time after
-
+    console.log("First " + passage1);
+    if(passage1 == null){
+        
+    }
+    
+    console.log("passage1="+passage1);
+    console.log("passage2="+passage2);
+    console.log("passage3="+passage3);
+    
+    if (station==passage1 && user_data["score"]<1){
+        console.log('watno');
+    }
+    else if(station==passage2 && user_data["score"]<7){
+        console.log('wat');
+    }
+    else if(station==passage3 && user_data["score"]<12){
+        console.log('watt');
+    }
+    
 }
 
 var timerCh;
@@ -105,6 +129,7 @@ function chrono() {
         station++;
         update_stations();
         get_question();
+        
     } else {
         duree--;
     }
