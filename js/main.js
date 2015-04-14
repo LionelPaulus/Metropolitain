@@ -13,7 +13,7 @@ function user_cookies(name,value) { // Get and update score, station, tickets, l
         Cookies.set(name, value, { expires: 999999999999 });
         user_data[name] = value;
     }else if(Cookies.get('score') == undefined){
-        Cookies.set('score', 0);
+        Cookies.set('score', 0, { expires: 999999999999 });
         user_data["score"] = 0;
         Cookies.set('actual_line', 0);
         user_data["actual_line"] = 0;
