@@ -115,12 +115,12 @@ body{
 /*  ----- Sélection lignes ------  */
 
 #terminus{
-    top:5%;
-    left:24%;
+    top:-5%;
+    left:27%;
     position:absolute;
     text-align: left;
     font-size:14px;
-    line-height: 25px;
+    line-height: 24px;
     
 }
 
