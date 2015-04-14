@@ -10,10 +10,10 @@ Cookies.defaults = {
 // Functions
 function user_cookies(name,value) { // Get and update score, station, tickets, line with cookies    
     if((name != null)&&(value != null)){
-        Cookies.set(name, value, { expires: 999999999999 });
+        Cookies.set(name, value);
         user_data[name] = value;
     }else if(Cookies.get('score') == undefined){
-        Cookies.set('score', 0, { expires: 999999999999 });
+        Cookies.set('score', 0);
         user_data["score"] = 0;
         Cookies.set('actual_line', 0);
         user_data["actual_line"] = 0;
@@ -74,9 +74,7 @@ function bad_guy() { // Ticket checker witch come 2 times at the first questions
 
 function play_sound(sound_name){
     if(no_sound == undefined){
-        if(sound_name == "example"){
-            $("#example").play(); // ID of the sound
-        }
+        $("#" + sound_name).play(); // ID of the sound
     }
 }
 
