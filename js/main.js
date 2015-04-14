@@ -1,6 +1,7 @@
 // Tests
 
 // Settings
+var user_data = [];
 
 // Functions
 function user_data(name,value) { // Get and update score, station, tickets, line with cookies
@@ -10,13 +11,10 @@ function user_data(name,value) { // Get and update score, station, tickets, line
     };
     
     if((name != null)&&(value != null)){
-        var user_data = [];
         Cookies.set(name, value);
         user_data[name] = value;
-        console.log("name: "+name+" value: "+value);
     }else if(Cookies.get('score') == undefined){
         Cookies.set('score', 0);
-        var user_data = [];
         user_data["score"] = 0;
         Cookies.set('actual_line', 0);
         user_data["actual_line"] = 0;
@@ -25,7 +23,6 @@ function user_data(name,value) { // Get and update score, station, tickets, line
         Cookies.set('lines_finished', 0); // Levels accomplished
         user_data["lines_finished"] = 0;        
     }else{
-        var user_data = [];
         user_data["score"] = Cookies.get('score');
         user_data["actual_line"] = Cookies.get('actual_line');
         user_data["actual_progression"] = Cookies.get('actual_progression');
