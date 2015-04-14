@@ -1,5 +1,7 @@
 {
    "name":"Niveau 1",
+   "tickets_to_unblock":"0",
+   "tickets_to_end":"50",
    "stations":[
       "La Défense",
       "Esplanade de la Défense",

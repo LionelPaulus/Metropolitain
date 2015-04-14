@@ -11,6 +11,7 @@ var station_from;
 var station_to;
 var no_sound = false;
 var bad_guy_stops = [];
+var tickets_to_end = 0; // Number of tickets needed to complete the level
 
 // General cookies settings
 Cookies.defaults = {
@@ -56,6 +57,11 @@ function get_question(user_response) { // Find a question in the JSON file
     if (user_response == null) {
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
+                // Tickets needed to complete the level
+                if(tickets_to_end == 0){
+                    tickets_to_end = parseInt(json.tickets_to_end);
+                }
+                
                 // Question
                 document.getElementById("question").innerHTML = json.questions[step].title;
 
@@ -75,8 +81,14 @@ function get_question(user_response) { // Find a question in the JSON file
     } else {
         if (user_response == correct) {
             console.log("correct");
+            
+            // Score update
             user_cookies("score", (user_data["score"] + 1));
             document.getElementById("score").innerHTML = "Score: " + user_data["score"];
+            
+            // Progression update
+            user_cookies("actual_progression", (user_data["score"] * 100 / ticket_to_end));
+            console.log(user_data["actual_progression"]);
         } else {
             console.log("faux");
         }
@@ -154,6 +166,10 @@ function resetChrono() {
     chrono();
 }
 chrono();
+
+function robber(){
+    
+}
 
 function play_sound(sound_name) {
     if (no_sound == false) {
