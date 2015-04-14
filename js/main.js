@@ -17,6 +17,12 @@ Cookies.defaults = {
     expires: Infinity
 };
 
+// Loader
+$(window).load(function() {
+    $(".load").fadeOut("slow");
+    $(".loader").fadeOut("slow");
+});
+
 // Functions
 function user_cookies(name, value) { // Get and update score, station, tickets, line with cookies    
     if ((name != null) && (value != null)) {
