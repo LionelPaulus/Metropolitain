@@ -1,3 +1,4 @@
+/*
 body {
     background: url(../imgs/Background.jpg);
     background-repeat: no-repeat;
@@ -5,6 +6,7 @@ body {
     background-position: center;
     font-family: 'Raleway';
 }
+*/
 
 
 
@@ -29,7 +31,6 @@ header > img {
 }
 
 
-
 /*    ----- Container ------     */
 
 
@@ -37,14 +38,15 @@ article {
     margin: auto;
     width: 730px;
     position:relative;
+    padding-top:250px;
 }
 
 iframe {
     margin: auto;
     position: absolute;
-    bottom: 124px;
-    left: 3px;
-    right: 0px;
+    bottom: 123px;
+    left: 38px;
+    right: 30px;
 }
 
 
@@ -57,7 +59,7 @@ footer {
     height: 50px;
     width: 600px;
     margin: auto;
-    background: #dcffeb;
+    background: #ffffff;
 }
 
 footer > p {
