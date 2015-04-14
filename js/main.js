@@ -67,6 +67,7 @@ function get_question(user_response) { // Find a question in the JSON file
         }
         step += 1;
         console.log("step 2 = "+step);
+        
     }
 }
 
