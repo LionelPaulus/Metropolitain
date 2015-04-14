@@ -9,8 +9,6 @@ var user_data = [];
 var duree = 6;
 var station_from;
 var station_to;
-var num_station = 0;
-var new_score = 0;
 // General cookies settings
 Cookies.defaults = {
     expires: Infinity
@@ -64,7 +62,7 @@ function get_question(user_response) { // Find a question in the JSON file
     } else {
         if (user_response == correct) {
             console.log("correct");
-            new_score += 1;
+            user_cookies("score", (user_data["score"] + 1));
         } else {
             console.log("faux");
         }
@@ -77,15 +75,13 @@ function update_stations(){
     $(document).ready(function () {
         $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
             // Station FROM
-            station_from = json.stations[num_station];
+            station_from = json.stations[station -1];
 
             // Station TO
-            station_to = json.stations[num_station + 1];
+            station_to = json.stations[station];
 
             // Stations update
             document.getElementById("voyage").innerHTML = station_from + " -> " + station_to;
-            
-            num_station += 1;
         });
     });
 }
@@ -104,7 +100,6 @@ function chrono() {
             resetChrono();
             station++;
             update_stations();
-            user_cookies("score", new_score);
             get_question();
         } else {
             duree--;
