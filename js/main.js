@@ -39,16 +39,10 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
 }
 user_cookies(); // Get user data with cookies
 
-user_cookies();
-user_cookies("score", 10);
-console.log(user_data["score"]);
-
 function get_question(user_response) { // Find a question in the JSON file
     if (user_response == null) {
-
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
-                
                 // Question
                 document.getElementById("question").innerHTML = json.questions[step].title;
                 
@@ -60,10 +54,12 @@ function get_question(user_response) { // Find a question in the JSON file
 
                 // Good answer
                 correct = json.questions[step].correct;
+                
+                // Next question
+                step += 1;
             });
 
         });
-        step += 1;
 
     } else {
         if (user_response == correct) {
