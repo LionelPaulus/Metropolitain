@@ -38,7 +38,7 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
 }
 user_cookies(); // Get user data with cookies
 
-function reset_score(){ /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function reset_score() { /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     user_cookies("score", 0);
     document.getElementById("score").innerHTML = "Score: " + user_data["score"];
 }
@@ -49,7 +49,7 @@ function get_question(user_response) { // Find a question in the JSON file
             $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
                 // Question
                 document.getElementById("question").innerHTML = json.questions[step].title;
-                
+
                 // Possible answers
                 document.getElementById("rep1").innerHTML = json.questions[step].answers[0];
                 document.getElementById("rep2").innerHTML = json.questions[step].answers[1];
@@ -58,13 +58,11 @@ function get_question(user_response) { // Find a question in the JSON file
 
                 // Good answer
                 correct = json.questions[step].correct;
-                
+
                 // Next question
                 step += 1;
             });
-
         });
-
     } else {
         if (user_response == correct) {
             console.log("correct");
@@ -78,13 +76,10 @@ function get_question(user_response) { // Find a question in the JSON file
 }
 get_question();
 
-function update_stations(){
+function update_stations() {
     $(document).ready(function () {
         $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
-            // Station FROM
-            station_from = json.stations[station -1];
-
-            // Station TO
+            station_from = json.stations[station - 1];
             station_to = json.stations[station];
 
             // Stations update
@@ -92,30 +87,34 @@ function update_stations(){
         });
     });
 }
-update_stations();
+update_stations(); // First required update_stations
 
 function bad_guy() { // Ticket checker witch come 2 times at the first questions and 1 time after
 
 }
 
 var timerCh;
-timerCh = setInterval(function () {chrono();}, 1000);
-function chrono() {
+timerCh = setInterval(function () {
+    chrono();
+}, 1000);
 
-        if (duree <= 0) {
-            clearInterval(timerCh);
-            resetChrono();
-            station++;
-            update_stations();
-            get_question();
-        } else {
-            duree--;
-        }
+function chrono() {
+    if (duree <= 0) {
+        clearInterval(timerCh);
+        resetChrono();
+        station++;
+        update_stations();
+        get_question();
+    } else {
+        duree--;
+    }
 
     document.getElementById("temps").innerHTML = "durée=" + duree;
     document.getElementById("station").innerHTML = "station=" + station;
-    
-    if(station == stationTotale){clearInterval(timerCh);}    
+
+    if (station == stationTotale) {
+        clearInterval(timerCh);
+    }
 }
 
 function resetChrono() {
