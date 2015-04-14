@@ -9,6 +9,7 @@ var user_data = [];
 var duree = 6;
 var station_from;
 var station_to;
+var no_sound = false;
 // General cookies settings
 Cookies.defaults = {
     expires: Infinity
@@ -125,18 +126,22 @@ function resetChrono() {
 chrono();
 
 function play_sound(sound_name) {
-    if (no_sound == undefined) {
+    if (no_sound == false) {
         $("#" + sound_name).play(); // ID of the sound
     }
 }
 
 function stop_souds() { // Pause every sound
     /// MUST ADD CLASS "media" TO EVERY SOUND
-    var no_sound = true;
-    var media = document.getElementsByClassName('media'),
+    if(no_sound == false){
+        no_sound = true;
+        var media = document.getElementsByClassName('media'),
         i = media.length;
 
-    while (i--) {
-        media[i].pause();
+        while (i--) {
+            media[i].pause();
+        }
+    } else {
+        no_sound = false;
     }
 }
