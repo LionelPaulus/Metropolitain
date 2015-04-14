@@ -1,9 +1,9 @@
 body {
-    font-family: 'Raleway';
     background: url(../imgs/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    font-family: 'Raleway';
 }
 
 
@@ -21,7 +21,7 @@ header {
     margin: auto;
     border-radius: 7pt;
     background: #ffeebb;
-    border: 5px solid #fce293;
+    border: 3px solid #fce293;
 }
 
 header > img {
@@ -33,7 +33,6 @@ header > img {
 /*    ----- Container ------     */
 
 
-
 article {
     margin: auto;
     width: 730px;
@@ -43,9 +42,8 @@ article {
 iframe {
     margin: auto;
     position: absolute;
-    top: 181px;
-    bottom: 0px;
-    left: 14px;
+    bottom: 124px;
+    left: 3px;
     right: 0px;
 }
 
