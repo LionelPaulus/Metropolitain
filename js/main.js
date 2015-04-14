@@ -57,6 +57,7 @@ function get_question(user_response) { // Find a question in the JSON file
     if (user_response == null) {
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
+                console.log("step: " + step);
                 // Tickets needed to complete the level
                 if(tickets_to_end == 0){
                     tickets_to_end = parseInt(json.tickets_to_end);
@@ -88,7 +89,6 @@ function get_question(user_response) { // Find a question in the JSON file
             
             // Progression update
             user_cookies("actual_progression", (user_data["score"] * 100 / tickets_to_end));
-            console.log(user_data["actual_progression"]);
         } else {
             console.log("faux");
         }
