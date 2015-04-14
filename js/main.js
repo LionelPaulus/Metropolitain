@@ -1,16 +1,13 @@
 // Tests
 
 // Settings
-<<<<<<< HEAD
 var step = 0; // Number of the question
 var correct = null; // Correct answer of the question
-=======
 var user_data = [];
 // General cookies settings
 Cookies.defaults = {
     expires: Infinity
 };
->>>>>>> origin/master
 
 // Functions
 function user_cookies(name,value) { // Get and update score, station, tickets, line with cookies    
@@ -33,6 +30,7 @@ function user_cookies(name,value) { // Get and update score, station, tickets, l
         user_data["lines_finished"] = Cookies.get('lines_finished');
     }
 }
+user_cookies(); // Get user data with cookies
 
 user_cookies();
 user_cookies("score", 10);
@@ -82,9 +80,7 @@ function bad_guy() { // Ticket checker witch come 2 times at the first questions
 
 function play_sound(sound_name){
     if(no_sound == undefined){
-        if(sound_name == "example"){
-            $("#example").play(); // ID of the sound
-        }
+        $("#" + sound_name).play(); // ID of the sound
     }
 }
 
