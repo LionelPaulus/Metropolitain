@@ -87,7 +87,7 @@ function get_question(user_response) { // Find a question in the JSON file
             document.getElementById("score").innerHTML = "Score: " + user_data["score"];
             
             // Progression update
-            user_cookies("actual_progression", (user_data["score"] * 100 / ticket_to_end));
+            user_cookies("actual_progression", (user_data["score"] * 100 / tickets_to_end));
             console.log(user_data["actual_progression"]);
         } else {
             console.log("faux");
