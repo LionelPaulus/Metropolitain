@@ -1,30 +1,3 @@
-.loader {
-  animation: load 1s linear infinite;
-  border: .5em solid #555;
-  border-radius: 50%;
-  display: block;
-  height: 2em;
-  left: 50%;
-  margin: -1.5em;
-  position: absolute;
-  top: 50%;
-  width: 2em;
-}
-.loader:after {
-  border: .5em solid #6cf;
-  border-radius: 50%;
-  bottom: .9em;
-  content: '';
-  left: .1em;
-  position: absolute;
-  right: .9em;
-  top: .1em;
-}
-@keyframes load {
-  100% { transform: rotate(360deg); }
-}
-
-
 #play{
     margin:190px 0px 0px 62px;
     color:#fff;
@@ -41,8 +14,8 @@
 
 #container{
     background:#e2e2e2;
-    width: 278px;
-    height: 1067px;
+    width: 100%;
+    height: auto;
 }
 
 #container > p {
@@ -81,7 +54,6 @@
     font-size:14px;
 }
 
-/*  ----- Ligne 1 ------  */
 
 
 #cercle {
@@ -101,6 +73,7 @@
     position: absolute;
 }
 
+
 #progress2{
     margin-left:192px;
     padding-bottom: 5px;
@@ -110,8 +83,6 @@
     position: absolute;
 }
 
-
-/*  ----- Ligne 2 ------  */
 
 
 #cercle_2 {
@@ -124,9 +95,6 @@
     color:white;
 }
 
-/*  ----- Ligne 3 ------  */
-
-
 #cercle_3 {
     background: #a09923;
     border-radius: 50%;
@@ -136,9 +104,6 @@
     font-size: 36px;
     color:white;
 }
-
-/*  ----- Ligne 4 ------  */
-
 
 #cercle_4 {
     background:#c04191;
@@ -150,9 +115,6 @@
     color:white;
 }
 
-/*  ----- Ligne 5 ------  */
-
-
 #cercle_5 {
     background: #f28e42;
     border-radius: 50%;
@@ -160,4 +122,88 @@
     height: 48px;
     margin: 0px 0px 10px 6px;
     font-size: 36px;
+}
+
+#cercle_6 {
+    background: #79c898;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0px 0px 10px 6px;
+    font-size: 36px;
+}
+
+#cercle_7 {
+    background: #f898b8;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0px 0px 10px 6px;
+    font-size: 36px;
+}
+
+#cercle_8 {
+    background: #c8a8c8;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0px 0px 10px 6px;
+    font-size: 36px;
+}
+
+#cercle_9 {
+    background: #d5d253;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0px 0px 10px 6px;
+    font-size: 36px;
+}
+
+#cercle_10 {
+    background: #e7b93a;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0px 0px 10px 6px;
+    font-size: 36px;
+}
+
+#cercle_11 {
+    background: #8a693a;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0px 0px 10px 6px;
+    font-size: 36px;
+    color:white;
+}
+
+#cercle_12 {
+    background: #088858;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0px 0px 10px 6px;
+    font-size: 36px;
+    color:white;
+}
+
+#cercle_13 {
+    background: #88d8d8;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0px 0px 10px 6px;
+    font-size: 36px;
+}
+
+#cercle_14 {
+    background: #682898;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0px 0px 10px 6px;
+    font-size: 36px;
+    color:white;
 }
