@@ -13,6 +13,7 @@ function user_data(name,value) { // Get and update score, station, tickets, line
         var user_data = [];
         Cookies.set(name, value);
         user_data[name] = value;
+        console.log("name: "+name+" value: "+value);
     }else if(Cookies.get('score') == undefined){
         Cookies.set('score', 0);
         var user_data = [];
