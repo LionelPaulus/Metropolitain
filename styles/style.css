@@ -114,54 +114,71 @@ body{
 
 /*  ----- Sélection lignes ------  */
 
-
-#ligne{
-    background:white;
-    color:#000000;
-    width:262px;
-    height:80px;
-    border:none;
-    cursor:pointer;
-    font-size:17px;
-    padding:0;
-    margin-bottom: 10px;
-}
-
-#ligne > img{
-    width:17px;
-    position: absolute;
-    margin-top: 30px;
-    margin-left: 74px;
-}
-
 #terminus{
-    margin-top: -53px;
-    margin-left: 80px;
+    top:5%;
+    left:30%;
     position:absolute;
     text-align: left;
     font-size:14px;
+    line-height: 25px;
+    
+}
+
+.lock{
+    width:17px;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 100px;
 }
 
 
 #progress{
-    padding-bottom: 5px;
-    height:6px;
-    width:192px;
+    bottom:0;
+    height:9px;
+    width:77%;
     background: #f8c808;
     position: absolute;
-    margin-top: 8px;
 }
 
 
 #progress2{
-    margin-left:192px;
-    padding-bottom: 5px;
-    height:6px;
-    width:70px;
+    bottom:0;
+    right:0;
+    height:9px;
+    width:23%;
     background: #fff4c4;
     position: absolute;
-    margin-top: 8px;
 }
+
+
+
+.button {
+      display: inline-block;
+      position: relative;
+      border-radius: 2px;
+      font-size: 0.9em;
+      background-color: #fff;
+      color: #646464;
+    cursor: pointer;
+    width: 95%;
+    height:80px;
+    max-width: 380px;
+    margin-bottom: 10px;
+    }
+
+.button.raised {
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.button.raised:active {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    transition-delay: 0s;
+}
+
+/*    ------ Autres ------     */
+
 
 .loader {
   animation: load 1s linear infinite;
