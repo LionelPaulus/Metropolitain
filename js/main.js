@@ -1,20 +1,24 @@
 // Tests
 
 // Settings
+<<<<<<< HEAD
+var step = 0; // Number of the question
+var correct = null; // Correct answer of the question
+=======
+var user_data = [];
+// General cookies settings
+Cookies.defaults = {
+    expires: Infinity
+};
+>>>>>>> origin/master
 
 // Functions
-function user_data(name,value) { // Get and update score, station, tickets, line with cookies
-    // General cookies settings
-    Cookies.defaults = {
-        expires: Infinity
-    };
-    
+function user_cookies(name,value) { // Get and update score, station, tickets, line with cookies    
     if((name != null)&&(value != null)){
         Cookies.set(name, value);
         user_data[name] = value;
     }else if(Cookies.get('score') == undefined){
         Cookies.set('score', 0);
-        var user_data = [];
         user_data["score"] = 0;
         Cookies.set('actual_line', 0);
         user_data["actual_line"] = 0;
@@ -23,7 +27,6 @@ function user_data(name,value) { // Get and update score, station, tickets, line
         Cookies.set('lines_finished', 0); // Levels accomplished
         user_data["lines_finished"] = 0;        
     }else{
-        var user_data = [];
         user_data["score"] = Cookies.get('score');
         user_data["actual_line"] = Cookies.get('actual_line');
         user_data["actual_progression"] = Cookies.get('actual_progression');
@@ -31,11 +34,14 @@ function user_data(name,value) { // Get and update score, station, tickets, line
     }
 }
 
+user_cookies();
+user_cookies("score", 10);
+console.log(user_data["score"]);
+
 function get_question(user_response) { // Find a question in the JSON file
-    console.log(user_response);
-    var step = 0; // Number of the question
+    console.log("step 1="+step);
     if (user_response == null) {
-        step += 1;
+        
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
                 document.getElementById("question").innerHTML = json.questions[step].title;
@@ -43,27 +49,28 @@ function get_question(user_response) { // Find a question in the JSON file
                 document.getElementById("rep2").innerHTML = json.questions[step].answers[1];
                 document.getElementById("rep3").innerHTML = json.questions[step].answers[2];
                 document.getElementById("rep4").innerHTML = json.questions[step].answers[3];
+                
+                correct = json.questions[step].correct;
+                
             });
+            
         });
-    }else{
-        var correct = json.questions[step].correct;
+        
+        
+    }
+    else {
+     
+        console.log("reponse correcte = "+correct);
+        
         if(user_response == correct){
             console.log("correct");
         }else{
             console.log("faux");
         }
+        step += 1;
+        console.log("step 2 = "+step);
     }
 }
-
-/*$('[data-response]').on('click',function(){
-    var response_user=$(this).attr('data-response');
-    var correct = json.questions[step].correct;
-    if (response_user == correct){
-        console.log("good")}
-    else {console.log("no")};
-});*/
-
-
 
 
 
