@@ -29,6 +29,7 @@ function user_data(name,value) { // Get and update score, station, tickets, line
 }
 
 function get_question(user_response) { // Find a question in the JSON file
+    console.log(user_response);
     var step = 0; // Number of the question
     if (user_response == null) {
         step += 1;
@@ -50,6 +51,19 @@ function get_question(user_response) { // Find a question in the JSON file
         }
     }
 }
+
+/*$('[data-response]').on('click',function(){
+    var response_user=$(this).attr('data-response');
+    var correct = json.questions[step].correct;
+    if (response_user == correct){
+        console.log("good")}
+    else {console.log("no")};
+});*/
+
+
+
+
+
 get_question();
 
 function bad_guy() { // Ticket checker witch come 2 times at the first questions and 1 time after
