@@ -3,10 +3,14 @@
 // Settings
 var step = 0; // Number of the question
 var station = 1;
-var stationTotale = 3;
+var stationTotale = 4;
 var correct = null; // Correct answer of the question
 var user_data = [];
 var duree = 6;
+var station_from;
+var station_to;
+var num_station = 0;
+var new_score = 0;
 // General cookies settings
 Cookies.defaults = {
     expires: Infinity
@@ -44,31 +48,52 @@ function get_question(user_response) { // Find a question in the JSON file
 
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
-                console.log("step: " + step);
+                
+                // Question
                 document.getElementById("question").innerHTML = json.questions[step].title;
+                
+                // Possible answers
                 document.getElementById("rep1").innerHTML = json.questions[step].answers[0];
                 document.getElementById("rep2").innerHTML = json.questions[step].answers[1];
                 document.getElementById("rep3").innerHTML = json.questions[step].answers[2];
                 document.getElementById("rep4").innerHTML = json.questions[step].answers[3];
 
+                // Good answer
                 correct = json.questions[step].correct;
-
             });
 
         });
-
+        step += 1;
 
     } else {
         if (user_response == correct) {
             console.log("correct");
+            new_score += 1;
         } else {
             console.log("faux");
         }
-        step += 1;
         get_question();
     }
 }
 get_question();
+
+function update_stations(){
+    $(document).ready(function () {
+        $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
+            // Station FROM
+            station_from = json.stations[num_station];
+
+            // Station TO
+            station_to = json.stations[num_station + 1];
+
+            // Stations update
+            document.getElementById("voyage").innerHTML = station_from + " -> " + station_to;
+            
+            num_station += 1;
+        });
+    });
+}
+update_stations();
 
 function bad_guy() { // Ticket checker witch come 2 times at the first questions and 1 time after
 
@@ -82,6 +107,9 @@ function chrono() {
             clearInterval(timerCh);
             resetChrono();
             station++;
+            update_stations();
+            user_cookies("score", new_score);
+            get_question();
         } else {
             duree--;
         }
