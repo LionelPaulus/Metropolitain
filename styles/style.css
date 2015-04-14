@@ -28,6 +28,10 @@
   100% { transform: rotate(360deg); }
 }
 
+body{
+    margin:0;
+}   
+
 .bg{
     width: 100%;
     height: auto;
@@ -55,8 +59,8 @@
 
 #container > p {
     text-align: center;
-    margin:0px 0px 31.8px 24.7px;
-    padding-top:31.8px;
+    margin:0px 0px 31.8px 0px;
+    padding-top:21.8px;
 }
 
 
