@@ -1,5 +1,6 @@
 .loader {
   animation: load 1s linear infinite;
+  -webkit-animation: load 1s linear infinite;
   border: .5em solid #555;
   border-radius: 50%;
   display: block;
@@ -21,6 +22,9 @@
   top: .1em;
 }
 @keyframes load {
+  100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes load {
   100% { transform: rotate(360deg); }
 }
 
