@@ -10,7 +10,7 @@ function user_data(name,value) { // Get and update score, station, tickets, line
     };
     
     if((name != null)&&(value != null)){
-        user_data[];
+        var user_data = [];
         Cookies.set(name, value);
         user_data[name] = value;
     }else if(Cookies.get('score') == undefined){
