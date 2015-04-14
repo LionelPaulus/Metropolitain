@@ -8,7 +8,7 @@ Cookies.defaults = {
 };
 
 // Functions
-function user_data(name,value) { // Get and update score, station, tickets, line with cookies    
+function user_cookies(name,value) { // Get and update score, station, tickets, line with cookies    
     if((name != null)&&(value != null)){
         Cookies.set(name, value);
         user_data[name] = value;
@@ -29,9 +29,9 @@ function user_data(name,value) { // Get and update score, station, tickets, line
     }
 }
 
-user_data();
-user_data("score", 10);
-console.log(user_data["score"]);
+user_cookies();
+user_cookies("score", 10);
+console.log(user_cookies["score"]);
 
 function get_question(user_response) { // Find a question in the JSON file
     console.log(user_response);
