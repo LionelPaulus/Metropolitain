@@ -8,23 +8,26 @@ function user_data(name,value) { // Get and update score, station, tickets, line
     Cookies.defaults = {
         expires: Infinity
     };
-    if(Cookies.get('score') == undefined){
-        Cookies.set('score', 0);
-        var user_data["score"] = 0;
-        Cookies.set('actual_line', 0);
-        var user_data["actual_line"] = 0;
-        Cookies.set('actual_progression', 0);
-        var user_data["actual_progression"] = 0;
-        Cookies.set('lines_finished', 0); // Levels accomplished
-        var user_data["lines_finished"] = 0;
-    }else if((name != null)&&(value != null)){
+    
+    if((name != null)&&(value != null)){
         Cookies.set(name, value);
         user_data[name] = value;
+    }else if(Cookies.get('score') == undefined){
+        Cookies.set('score', 0);
+        var user_data = [];
+        user_data["score"] = 0;
+        Cookies.set('actual_line', 0);
+        user_data["actual_line"] = 0;
+        Cookies.set('actual_progression', 0);
+        user_data["actual_progression"] = 0;
+        Cookies.set('lines_finished', 0); // Levels accomplished
+        user_data["lines_finished"] = 0;        
     }else{
-        var score = Cookies.get('score');
-        var actual_line = Cookies.get('actual_line');
-        var actual_progression = Cookies.get('actual_progression');
-        var lines_finished = Cookies.get('lines_finished');
+        var user_data = [];
+        user_data["score"] = Cookies.get('score');
+        user_data["actual_line"] = Cookies.get('actual_line');
+        user_data["actual_progression"] = Cookies.get('actual_progression');
+        user_data["lines_finished"] = Cookies.get('lines_finished');
     }
 }
 
