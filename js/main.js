@@ -10,6 +10,8 @@ var duree = 6;
 var station_from;
 var station_to;
 var no_sound = false;
+var bad_guy_stops = [];
+
 // General cookies settings
 Cookies.defaults = {
     expires: Infinity
@@ -75,7 +77,6 @@ function get_question(user_response) { // Find a question in the JSON file
         get_question();
     }
 }
-bad_guy();
 get_question();
 
 
@@ -93,26 +94,28 @@ function update_stations() {
 update_stations(); // First required update_stations
 
 function bad_guy() { // Ticket checker witch come 2 times at the first questions and 1 time after
-    console.log("First " + passage1);
-    if(passage1 == null){
-        
+    if(bad_guy_stops[1] == null){
+        bad_guy_stops[1] = Math.floor((Math.random()*4)+1);
+        bad_guy_stops[2] = Math.floor((Math.random()*5)+8);
+        bad_guy_stops[3] = Math.floor((Math.random()*7)+18);
     }
     
-    console.log("passage1="+passage1);
-    console.log("passage2="+passage2);
-    console.log("passage3="+passage3);
+    console.log("passage1="+bad_guy_stops[1]);
+    console.log("passage2="+bad_guy_stops[2]);
+    console.log("passage3="+bad_guy_stops[3]);
     
-    if (station==passage1 && user_data["score"]<1){
+    if (station==bad_guy_stops[1] && user_data["score"]<1){
         console.log('watno');
     }
-    else if(station==passage2 && user_data["score"]<7){
+    else if(station==bad_guy_stops[2] && user_data["score"]<7){
         console.log('wat');
     }
-    else if(station==passage3 && user_data["score"]<12){
+    else if(station==bad_guy_stops[3] && user_data["score"]<12){
         console.log('watt');
     }
     
 }
+bad_guy();
 
 var timerCh;
 timerCh = setInterval(function () {
@@ -126,7 +129,7 @@ function chrono() {
         station++;
         update_stations();
         get_question();
-        
+        bad_guy();
     } else {
         duree--;
     }
