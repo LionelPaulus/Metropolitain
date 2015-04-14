@@ -6,7 +6,6 @@ var station = 1;
 var stationTotale = 3;
 var correct = null; // Correct answer of the question
 var user_data = [];
-var timerCh = 0;
 var duree = 6;
 // General cookies settings
 Cookies.defaults = {
@@ -69,19 +68,16 @@ function get_question(user_response) { // Find a question in the JSON file
         get_question();
     }
 }
-
-
-
 get_question();
 
 function bad_guy() { // Ticket checker witch come 2 times at the first questions and 1 time after
 
 }
 
-timerCh = setInterval("chrono()", 1000);
-
+var timerCh;
+timerCh = setInterval(function () {chrono();}, 1000);
 function chrono() {
-    
+
         if (duree <= 0) {
             clearInterval(timerCh);
             resetChrono();
@@ -94,6 +90,8 @@ function chrono() {
 
     document.getElementById("temps").innerHTML = "durée=" + duree;
     document.getElementById("station").innerHTML = "station=" + station;
+    
+    if(station == stationTotale){clearInterval(timerCh);}
 
     
         
