@@ -37,11 +37,11 @@ user_cookies("score", 10);
 console.log(user_data["score"]);
 
 function get_question(user_response) { // Find a question in the JSON file
-    console.log("step 1="+step);
     if (user_response == null) {
         
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/lines/1.json", function (json) {
+                console.log("step: " + step);
                 document.getElementById("question").innerHTML = json.questions[step].title;
                 document.getElementById("rep1").innerHTML = json.questions[step].answers[0];
                 document.getElementById("rep2").innerHTML = json.questions[step].answers[1];
@@ -57,17 +57,13 @@ function get_question(user_response) { // Find a question in the JSON file
         
     }
     else {
-     
-        console.log("reponse correcte = "+correct);
-        
         if(user_response == correct){
             console.log("correct");
         }else{
             console.log("faux");
         }
         step += 1;
-        console.log("step 2 = "+step);
-        
+        get_question();
     }
 }
 
