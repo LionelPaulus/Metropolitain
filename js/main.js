@@ -8,11 +8,9 @@ Cookies.defaults = {
 };
 
 // Functions
-function user_data(name,value) { // Get and update score, station, tickets, line with cookies    
-    if((name != null)&&(value != null)){
-        Cookies.set(name, value);
-        user_data[name] = value;
-    }else if(Cookies.get('score') == undefined){
+function initiate(){
+    // User data
+    if(Cookies.get('score') == undefined){
         Cookies.set('score', 0);
         user_data["score"] = 0;
         Cookies.set('actual_line', 0);
@@ -28,7 +26,12 @@ function user_data(name,value) { // Get and update score, station, tickets, line
         user_data["lines_finished"] = Cookies.get('lines_finished');
     }
 }
-user_data();
+initiate();
+
+function user_data(name,value) {
+    Cookies.set(name, value);
+    user_data[name] = value;
+}
 user_data("score", 10);
 console.log(user_data["score"]);
 
