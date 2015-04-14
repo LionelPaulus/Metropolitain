@@ -2,14 +2,13 @@
 
 // Settings
 var user_data = [];
+// General cookies settings
+Cookies.defaults = {
+    expires: Infinity
+};
 
 // Functions
-function user_data(name,value) { // Get and update score, station, tickets, line with cookies
-    // General cookies settings
-    Cookies.defaults = {
-        expires: Infinity
-    };
-    
+function user_data(name,value) { // Get and update score, station, tickets, line with cookies    
     if((name != null)&&(value != null)){
         Cookies.set(name, value);
         user_data[name] = value;
