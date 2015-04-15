@@ -45,13 +45,13 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
         user_data["actual_progression"] = parseInt(Cookies.get('actual_progression'));
         user_data["lines_finished"] = Cookies.get('lines_finished');
     }
-    document.getElementById("score").innerHTML = "Score: " + user_data["score"];
+    $('#score').html("Score: " + user_data["score"]);
 }
 user_cookies(); // Get user data with cookies
 
 function reset_score() { /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     user_cookies("score", 0);
-    document.getElementById("score").innerHTML = "Score: " + user_data["score"];
+    $('#score').html("Score: " + user_data["score"]);
 }
 
 function get_question(user_response) { // Find a question in the JSON file
@@ -87,13 +87,13 @@ function get_question(user_response) { // Find a question in the JSON file
                 }
                 
                 // Question
-                document.getElementById("question").innerHTML = json.questions[step].title;
+                $('#question').html(json.questions[step].title);
 
                 // Possible answers
-                document.getElementById("rep1").innerHTML = json.questions[step].answers[0];
-                document.getElementById("rep2").innerHTML = json.questions[step].answers[1];
-                document.getElementById("rep3").innerHTML = json.questions[step].answers[2];
-                document.getElementById("rep4").innerHTML = json.questions[step].answers[3];
+                $('#rep1').html(json.questions[step].answers[0]);
+                $('#rep2').html(json.questions[step].answers[1]);
+                $('#rep3').html(json.questions[step].answers[2]);
+                $("#rep4").html(json.questions[step].answers[3]);
 
                 // Good answer
                 correct = json.questions[step].correct;
@@ -108,7 +108,7 @@ function get_question(user_response) { // Find a question in the JSON file
             
             // Score update
             user_cookies("score", (user_data["score"] + 1));
-            document.getElementById("score").innerHTML = "Score: " + user_data["score"];
+            $('#score').html("Score: " + user_data["score"]);
             
             // Progression update
             user_cookies("actual_progression", (user_data["score"] * 100 / tickets_to_end));
@@ -128,7 +128,7 @@ function update_stations() {
             station_to = json.stations[station];
 
             // Stations update
-            document.getElementById("voyage").innerHTML = station_from + " -> " + station_to;
+            $('#voyage').html(station_from + " -> " + station_to);
         });
     });
 }
@@ -173,8 +173,8 @@ function chrono() {
         duree--;
     }
 
-    document.getElementById("temps").innerHTML = "durée=" + duree;
-    document.getElementById("station").innerHTML = "station=" + station;
+    $('#temps').html("durée=" + duree);
+    $('#statio ').html("station=" + station);
 
     if (station == num_stations) {
         clearInterval(timerCh);
@@ -203,7 +203,7 @@ function stop_souds() { // Pause every sound
     /// MUST ADD CLASS "media" TO EVERY SOUND
     if(no_sound == false){
         no_sound = true;
-        var media = document.getElementsByClassName('media'),
+        var media = document.getElementsByClassName('media'); // C'était une virgule à la base au lieu de ;
         i = media.length;
 
         while (i--) {
