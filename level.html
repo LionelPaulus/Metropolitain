@@ -16,10 +16,14 @@
     <div class="load"></div>
     <i class="loader"></i>
     <div id="container">
-        
+<style>
+.button {
+    display: none;
+}
+</style>
         <p>SELECTIONNEZ VOTRE LIGNE</p>
         
-        <div class="button raised"  onclick="window.location.href='game.html'">
+        <div class="button raised" id="ligne1" onclick="window.location.href='game.html'">
       <span class="metro ligne1">Ligne 1</span>
             <p id="terminus">Château de Vincennes<br>
 La Défense</p>
@@ -28,7 +32,7 @@ La Défense</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne2">
       <span class="metro ligne2">Ligne 2</span>
             <p id="terminus">Porte Dauphine<br>
  Nation</p>
@@ -36,7 +40,7 @@ La Défense</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne3">
       <span class="metro ligne3">Ligne 3</span>
             <p id="terminus">Pont de Levallois - Bécon<br>
 Gallieni</p>
@@ -44,7 +48,7 @@ Gallieni</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne4">
       <span class="metro ligne4">Ligne 4</span>
             <p id="terminus">Porte de Clignancourt<br>
 Maire de Montrouge</p>
@@ -52,7 +56,7 @@ Maire de Montrouge</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne5">
       <span class="metro ligne5">Ligne 5</span>
             <p id="terminus">Bobigny Pablo Picasso<br>
 Place d’Italie</p>
@@ -60,7 +64,7 @@ Place d’Italie</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne6">
       <span class="metro ligne6">Ligne 6</span>
             <p id="terminus">Charles de Gaulle - Étoile <br>
 Nation</p>
@@ -68,7 +72,7 @@ Nation</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne7">
       <span class="metro ligne7">Ligne 7</span>
             <p id="terminus">La Courneuve 8 Mai 1945<br>
  Mairie d’Ivry et Villejuif</p>
@@ -76,7 +80,7 @@ Nation</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne8">
       <span class="metro ligne8">Ligne 8</span>
             <p id="terminus">Balard<br>
 Créteuil-Préfecture</p>
@@ -84,7 +88,7 @@ Créteuil-Préfecture</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne9">
       <span class="metro ligne9">Ligne 9</span>
             <p id="terminus">Pont de Sèvres<br>
 Mairie de Montreuil</p>
@@ -92,7 +96,7 @@ Mairie de Montreuil</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne10">
       <span class="metro ligne10">Ligne 10</span>
             <p id="terminus">Boulogne Pont de St Cloud <br>
 Gare d’Austerlitz</p>
@@ -100,7 +104,7 @@ Gare d’Austerlitz</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne11">
       <span class="metro ligne11">Ligne 11</span>
             <p id="terminus">Châtelet<br>
 Mairie des Lilas</p>
@@ -108,7 +112,7 @@ Mairie des Lilas</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne12">
       <span class="metro ligne12">Ligne 12</span>
             <p id="terminus">Aubervilliers<br>
 Mairie d’Issy</p>
@@ -116,7 +120,7 @@ Mairie d’Issy</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne13">
       <span class="metro ligne13">Ligne 13</span>
             <p id="terminus">Saint-Denis et Gabriel Péri <br>
 Châtillon-Montrouge</p>
@@ -124,7 +128,7 @@ Châtillon-Montrouge</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey">
+        <div class="button raised grey" id="ligne14">
       <span class="metro ligne14">Ligne 14</span>
             <p id="terminus">Saint-Lazare<br>
  Olympiades</p>
@@ -140,6 +144,60 @@ Châtillon-Montrouge</p>
 <script type="text/javascript" src="js/js.cookie.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="application/javascript">
+$(window).load(function (){
     $('#progress').css('width',user_data["actual_progression"] + "%");
+    $("#ligne1").fadeIn(1300).css("display","inline-block");
+    $("#ligne2").fadeIn(1500).css("display","inline-block");
+    $("#ligne3").fadeIn(1700).css("display","inline-block");
+    $("#ligne4").fadeIn(1900).css("display","inline-block");
+    $("#ligne5").fadeIn(2100).css("display","inline-block");
+    $("#ligne6").fadeIn(2300).css("display","inline-block");
+    $("#ligne7").fadeIn(2500).css("display","inline-block");
+    $("#ligne8").fadeIn(2700).css("display","inline-block");
+    $("#ligne9").fadeIn(2900).css("display","inline-block");
+    $("#ligne10").fadeIn(3100).css("display","inline-block");
+    $("#ligne11").fadeIn(3300).css("display","inline-block");
+    $("#ligne12").fadeIn(3500).css("display","inline-block");
+    $("#ligne13").fadeIn(3700).css("display","inline-block");
+    $("#ligne14").fadeIn(3900).css("display","inline-block");
+    
+
+});
+    
+    
+    
+    
+    
+    
+    
+    
 </script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
