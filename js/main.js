@@ -148,28 +148,28 @@ timerCh = setInterval(function () {
 function chrono() {
     
    $(window).load(function(){
-   $("#button").hide();
-   $("#button2").hide();
+  $("#transition").hide();
+   //$("#button2").hide();
 });
     
     if (duree <= 0) {
         clearInterval(timerCh);
         
         
-    $("#button").show();
-    $("#button2").show();
+    $("#transition").show();
+    //$("#button2").show();
     
 
         
         
         $("#button").click(function (){
 
-    $("#button").hide();
-    $("#button2").hide();
+    $("#transition").hide();
+    //$("#button2").hide();
             
-            $("#button2").click(function (){
+            //$("#button2").click(function (){
 
-    $("#button2").hide();
+    //$("#button2").hide();
     
 
 });
@@ -178,7 +178,7 @@ function chrono() {
         update_stations();
         eventsHappening();
         // get_question();
-    });
+    //});
     }
                            
     else {
