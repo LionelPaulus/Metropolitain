@@ -5,7 +5,8 @@ var step = 0; // Number of the question
 var station = 1;
 var correct = null; // Correct answer of the question
 var user_data = [];
-var duree = 6;
+var duree = 0;
+var duree_totale = 6;
 var station_from;
 var station_to;
 var no_sound = false;
@@ -13,6 +14,8 @@ var bad_guy_stops = [];
 var tickets_to_end = 0; // Number of tickets needed to complete the level
 var num_stations = 0; // Total
 var num_questions = 0; // Total
+var event_stations = [];
+
 
 // General cookies settings
 Cookies.defaults = {
@@ -161,6 +164,8 @@ if(which_ID==1){
         user_cookies("score", (user_data["score"] - 2));
     }
     
+    event_stations[station-1]=0;
+    console.log("new evenstation"+event_stations);
 }
 
 
@@ -175,13 +180,16 @@ function chrono() {
         resetChrono();
         station++;
         update_stations();
+        console.log("eventstation:"+event_stations[station-1]);
+        eventsHappening(event_stations[station-1]);
         get_question();
     } else {
         duree--;
-    }
-
+    }    
+    // Radial progress bar update
+    var radial_progress_bar = (duree / (duree_totale-1));
+    $('#circle').circleProgress({value: radial_progress_bar});
     $('#temps').html(duree +"'");
-    $('#statio ').html("station=" + station);
 
     if (station == num_stations) {
         clearInterval(timerCh);
@@ -189,8 +197,18 @@ function chrono() {
     }
 }
 
+
+function eventsHappening(which_ID){
+    for (var i=0;i< event_stations.length;i++){
+        if(event_stations[i]==which_ID){
+            events(which_ID);
+        }
+}
+}
+            
+
 function resetChrono() {
-    duree = 6;
+    duree = duree_totale;
     timerCh = setInterval("chrono()", 1000);
     chrono();
 }
@@ -220,10 +238,9 @@ function stop_souds() { // Pause every sound
         no_sound = false;
     }
 }
-
+//
 function event_handler(){
     // Full board with 0
-    var event_stations = [];
     for(var i = 0; i<num_stations; i++){
         event_stations[i] = 0;
     }
