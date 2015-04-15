@@ -318,6 +318,8 @@ position: absolute;
     position: absolute;
     top: 161px;
     margin: auto;
+    background-image: url(../imgs/Background.jpg);
+    background-size: contain;
 }
 
 #transition > a{
