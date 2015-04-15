@@ -194,13 +194,13 @@ body{
     width:80%;
     height:80px;
     margin:auto;
-    padding-top:50px;
+    padding-top:30px;
 }
 
 #barre_jeu{
     background:white;
     text-align: center;
-    font-size:23px;
+    font-size:1.1em;
     font-family: 'Raleway';
     padding:25px 0px 25px 0px;
 }
@@ -224,22 +224,23 @@ body{
 }
 
 .entre_station span{
-    width:100%;
+    width: 45%;
     height:7px;
     border-bottom:5px solid #f8c808;
     display:block;
+    margin: auto;
 }
 
 
 #station_from{
-    width:25%;
+    width: 25%;
+    margin-left: -10px;
     height: auto;
     float: left;
-/* word-wrap: break-word;
-    text-overflow: ellipsis;*/
     background: #f6f6f6;
     text-align: right;
     clear:both;
+    text-overflow: ellipsis;
 }
 
 #station_from2{
@@ -254,30 +255,37 @@ body{
     float: right;
     background: #f6f6f6;
     text-align: left;
+    margin-right: -2%;
 }
 
-#station_to:before{
-width:3px;
-height:3px;
+#barre_lignes:before{
+width: 20px;
+height: 20px;
 content:"\00a0";
 border-radius: 50%;
 background:#f8c808;
-padding-right:15px;
-    margin-right: 10%;
+left: 25%;
+position: absolute;
 }
 
-#station_from:after{
-width:3px;
-height:3px;
+#barre_lignes:after{
+width: 20px;
+height: 20px;
 content:"\00a0";
 border-radius: 50%;
 background:#f8c808;
-padding-left:15px;
-    margin-left:  10%;
+right: 25%;
+top: 14.4%;
+position: absolute;
 }
 
 #circle{
-    padding-top:26px;
+    padding-top:16px;
+}
+
+#score {
+    position: absolute;
+    right:5%;
 }
 
 .answers {
@@ -303,6 +311,28 @@ padding-left:15px;
     width:10%;
     background: #fff4c4;
 }
+
+
+#button {
+    position:absolute;
+    margin-top:-100;
+    margin-left:100px;
+    width:100px;
+    height:100px;
+    border:1px solid black;
+    background-color:red;
+    z-index:100;
+}
+#button2 {
+    position:absolute;
+    margin-top:-100;
+    width:100px;
+    height:100px;
+    border:1px solid black;
+    background-color:blue;
+    z-index:100;
+}
+
 
 /*    ------ Autres ------     */
 
@@ -331,6 +361,11 @@ padding-left:15px;
   right: .9em;
   top: .1em;
 }
+
+
+
+
+
 @keyframes load {
   100% { transform: rotate(360deg); }
 }
