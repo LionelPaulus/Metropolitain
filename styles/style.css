@@ -263,7 +263,7 @@ body {
     background: #f6f6f6;
     text-align: right;
     width: 100%;
-    bottom: 0px;
+    height: 30px;
 }
 
 #barre_lignes {
@@ -492,7 +492,5 @@ body {
 }
 
 #sounds {
-    bottom: 0;
-    right: 2px;
-    position: absolute;
+    padding-top: 3px;
 }
