@@ -162,7 +162,7 @@ if(which_ID==1){
         user_cookies("score", (user_data["score"] - 2));
     }
     
-    event_stations[station]=0;
+    event_stations[station-1]=0;
 }
 
 
@@ -177,7 +177,7 @@ function chrono() {
         resetChrono();
         station++;
         update_stations();
-        eventsHappening(which_ID);
+        eventsHappening(event_stations[station-1]);
         get_question();
     } else {
         duree--;
