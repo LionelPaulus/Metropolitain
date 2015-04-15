@@ -14,6 +14,8 @@ var bad_guy_stops = [];
 var tickets_to_end = 0; // Number of tickets needed to complete the level
 var num_stations = 0; // Total
 var num_questions = 0; // Total
+var event_stations = [];
+
 
 // General cookies settings
 Cookies.defaults = {
@@ -177,6 +179,7 @@ function chrono() {
         resetChrono();
         station++;
         update_stations();
+        console.log("eventstation:"+event_stations[station-1]);
         eventsHappening(event_stations[station-1]);
         get_question();
     } else {
@@ -236,10 +239,9 @@ function stop_souds() { // Pause every sound
         no_sound = false;
     }
 }
-
+//
 function event_handler(){
     // Full board with 0
-    var event_stations = [];
     for(var i = 0; i<num_stations; i++){
         event_stations[i] = 0;
     }
