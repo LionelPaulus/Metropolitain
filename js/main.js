@@ -165,6 +165,7 @@ if(which_ID==1){
     }
     
     event_stations[station-1]=0;
+    console.log("new evenstation"+event_stations);
 }
 
 
