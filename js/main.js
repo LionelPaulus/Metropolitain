@@ -93,10 +93,10 @@ function get_question(user_response) { // Find a question in the JSON file
                 $('#question').html(json.questions[step].title);
 
                 // Possible answers
-                $('#rep1').html(json.questions[step].answers[0]);
-                $('#rep2').html(json.questions[step].answers[1]);
-                $('#rep3').html(json.questions[step].answers[2]);
-                $("#rep4").html(json.questions[step].answers[3]);
+                $('#rep1').html(json.questions[step].answers[0]+"<paper-ripple fit></paper-ripple>");
+                $('#rep2').html(json.questions[step].answers[1]+"<paper-ripple fit></paper-ripple>");
+                $('#rep3').html(json.questions[step].answers[2]+"<paper-ripple fit></paper-ripple>");
+                $("#rep4").html(json.questions[step].answers[3]+"<paper-ripple fit></paper-ripple>");
 
                 // Good answer
                 correct = json.questions[step].correct;
