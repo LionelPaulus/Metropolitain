@@ -230,6 +230,7 @@ body {
 .button.green {
     background-color: #0f9d58;
     color: #fff;
+    margin-top: 90px;
 }
 
 .button.transition p {
