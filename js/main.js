@@ -53,7 +53,7 @@ function reset_score() { /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     user_cookies("score", 0);
     document.getElementById("score").innerHTML = "Score: " + user_data["score"];
 }
-step = 100;
+
 function get_question(user_response) { // Find a question in the JSON file
     if(step == num_questions){
         // No more question

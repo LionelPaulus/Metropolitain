@@ -115,7 +115,7 @@ body{
 /*  ----- Sélection lignes ------  */
 
 #terminus{
-    top:-5%;
+    top:4%;
     left:27%;
     position:absolute;
     text-align: left;
@@ -153,18 +153,22 @@ body{
 
 
 .button {
-      display: inline-block;
-      position: relative;
-      border-radius: 2px;
-      font-size: 0.9em;
-      background-color: #fff;
-      color: #646464;
+    display: inline-block;
+    position: relative;
+    border-radius: 2px;
+    font-size: 0.9em;
+    background-color: #fff;
+    color: #646464;
     cursor: pointer;
     width: 95%;
     height:80px;
     max-width: 380px;
-    margin-bottom: 10px;
-    }
+    margin-bottom: 10px;    
+}
+
+.button.raised.grey {
+    background-color: #F4F4F4;
+}
 
 .button.raised {
     transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
