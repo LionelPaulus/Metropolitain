@@ -194,13 +194,13 @@ body{
     width:80%;
     height:80px;
     margin:auto;
-    padding-top:50px;
+    padding-top:30px;
 }
 
 #barre_jeu{
     background:white;
     text-align: center;
-    font-size:23px;
+    font-size:1.1em;
     font-family: 'Raleway';
     padding:25px 0px 25px 0px;
 }
@@ -277,7 +277,12 @@ padding-left:15px;
 }
 
 #circle{
-    padding-top:26px;
+    padding-top:16px;
+}
+
+#score {
+    position: absolute;
+    right:5%;
 }
 
 .answers {
@@ -331,6 +336,11 @@ padding-left:15px;
   right: .9em;
   top: .1em;
 }
+
+
+
+
+
 @keyframes load {
   100% { transform: rotate(360deg); }
 }
