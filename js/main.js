@@ -5,7 +5,8 @@ var step = 0; // Number of the question
 var station = 1;
 var correct = null; // Correct answer of the question
 var user_data = [];
-var duree = 6;
+var duree = 0;
+var duree_totale = 6;
 var station_from;
 var station_to;
 var no_sound = false;
@@ -174,7 +175,10 @@ function chrono() {
     } else {
         duree--;
     }
-
+    
+    // Radial progress bar update
+    var radial_progress_bar = (duree / (duree_totale-1));
+    $('#circle').circleProgress({value: radial_progress_bar});
     $('#temps').html("durée=" + duree);
     $('#statio ').html("station=" + station);
 
@@ -185,7 +189,7 @@ function chrono() {
 }
 
 function resetChrono() {
-    duree = 6;
+    duree = duree_totale;
     timerCh = setInterval("chrono()", 1000);
     chrono();
 }
