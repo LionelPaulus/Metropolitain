@@ -128,7 +128,8 @@ function update_stations() {
             station_to = json.stations[station];
 
             // Stations update
-            document.getElementById("voyage").innerHTML = station_from + " -> " + station_to;
+            document.getElementById("station_from").innerHTML = station_from;
+            document.getElementById("station_to").innerHTML = station_to;
         });
     });
 }
@@ -173,7 +174,7 @@ function chrono() {
         duree--;
     }
 
-    document.getElementById("temps").innerHTML = "durée=" + duree;
+    document.getElementById("temps").innerHTML = duree;
     document.getElementById("station").innerHTML = "station=" + station;
 
     if (station == num_stations) {

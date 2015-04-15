@@ -5,16 +5,78 @@
     <meta charset="utf-8">
     <title>Metropolitain</title>
     <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/metrodna.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
 </head>
 
 <body>
+<!--
     <div class="load"></div>
     <i class="loader"></i>
-    <img src="imgs/capture3.jpg" width="280px;">
+-->
+   
+    <div id="barre_jeu">
+<!--    <span class="metro ligne1" style="top:10%;left:10%;">Ligne 1</span>-->
+    METROPOLITAIN
+    </div>
+    
+    <div id="barre_lignes">
+
+<div id="station_from"></div>
+        
+        <div class="entre_station">
+           <span></span>
+            
+            <!--<div id="cercle"></div>
+            <div id="line"></div>
+            <div id="cercle2"></div>-->
+            
+        </div>
+        
+        <div id="station_to"></div>
+    </div>
+    
+    <div class="contain">
+       
+       
+
+<div id="circle">
+<div id="temps"></div></div>
+        
+       <div id="question"></div>
+<button class="answers" data-response="1" id="rep1" onclick="get_question(0);">A</button>
+<button class="answers" data-response="2" id="rep2" onclick="get_question(1);">B</button>
+<button class="answers" data-response="3" id="rep3" onclick="get_question(2);">C</button>
+<button class="answers" data-response="4" id="rep4" onclick="get_question(3);">D</button>
+
+
+           <div id="progress_bar"></div>
+           <div id="progress_bar2"></div>
+<!--<div id="station"></div>-->
+<div id="score"></div>
+<!--<button onclick="reset_score();">Reset score</button> -->
+        
+    </div>
+    
+    <div id="barre_bas_jeu">
+    <img src="imgs/Volume.svg">
+    </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/js.cookie.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/circle-progress.js"></script>
+
+<script>
+    $('#circle').circleProgress({
+        value: 0.75,
+        size: 80,
+        fill: {
+            gradient: ["#f8c808", "#e59f01"]
+        }
+    });
+</script>
 
 </html>
