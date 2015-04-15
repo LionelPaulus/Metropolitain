@@ -146,14 +146,42 @@ timerCh = setInterval(function () {
 }, 1000);
 
 function chrono() {
+    
+   $(window).load(function(){
+   $("#button").hide();
+   $("#button2").hide();
+});
+    
     if (duree <= 0) {
         clearInterval(timerCh);
+        
+        
+    $("#button").show();
+    $("#button2").show();
+    
+
+        
+        
+        $("#button").click(function (){
+
+    $("#button").hide();
+    $("#button2").hide();
+            
+            $("#button2").click(function (){
+
+    $("#button2").hide();
+    
+
+});
         // resetChrono();
         station++;
         update_stations();
         eventsHappening();
         // get_question();
-    } else {
+    });
+    }
+                           
+    else {
         duree--;
     }
 
@@ -208,9 +236,6 @@ function resetChrono() {
 }
 chrono();
 
-function robber() {
-
-}
 
 function play_sound(sound_name) {
     if (no_sound == false) {
