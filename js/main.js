@@ -3,7 +3,6 @@
 // Settings
 var step = 0; // Number of the question
 var station = 1;
-var stationTotale = 25;
 var correct = null; // Correct answer of the question
 var user_data = [];
 var duree = 6;
@@ -12,6 +11,8 @@ var station_to;
 var no_sound = false;
 var bad_guy_stops = [];
 var tickets_to_end = 0; // Number of tickets needed to complete the level
+var num_stations = 0; // Total
+var num_questions = 0; // Total
 
 // General cookies settings
 Cookies.defaults = {
@@ -52,12 +53,33 @@ function reset_score() { /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     user_cookies("score", 0);
     document.getElementById("score").innerHTML = "Score: " + user_data["score"];
 }
-
+step = 100;
 function get_question(user_response) { // Find a question in the JSON file
-    if (user_response == null) {
+    if(step == num_questions){
+        // No more question
+        window.alert("End of questions");
+        
+        // Stop the chrono
+        clearInterval(timerCh);
+    }else if (user_response == null) {
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/line_1.json?nocache=" + (new Date()).getTime(), function (json) {
-                console.log("step: " + step);
+                // Counter for stations & questions
+                if(num_stations == 0){
+                    var key = 0;
+                    for(key in json.stations) {
+                      if(json.stations.hasOwnProperty(key)) {
+                        num_stations++;
+                      }
+                    }
+                    key = 0;
+                    for(key in json.questions) {
+                      if(json.questions.hasOwnProperty(key)) {
+                        num_questions++;
+                      }
+                    }
+                }
+                
                 // Tickets needed to complete the level
                 if(tickets_to_end == 0){
                     tickets_to_end = parseInt(json.tickets_to_end);
@@ -155,8 +177,9 @@ function chrono() {
     document.getElementById("temps").innerHTML = "durée=" + duree;
     document.getElementById("station").innerHTML = "station=" + station;
 
-    if (station == stationTotale) {
+    if (station == num_stations) {
         clearInterval(timerCh);
+        // End of the level
     }
 }
 
