@@ -55,7 +55,7 @@ function reset_score() { /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 }
 
 function get_question(user_response) { // Find a question in the JSON file
-    if(step == num_questions){
+    if((step == num_questions)&&(num_questions != 0)){
         // No more question
         window.alert("End of questions");
         
@@ -233,6 +233,7 @@ function event_handler(){
     
     var total = 0;
     
+    /*
     for(var i = 0; i <= event_passages.length; i++){
         total += event_passages[i];
     }
@@ -249,20 +250,21 @@ function event_handler(){
     if(event_stations[n] == 0){
         event_stations[n] = events_id[choix_event];
     }
-    
-    /*
-    for (var bm = 1; bm < 11; bm++) {
+    */
+    //// 
+    for (var bm = 1; bm < event_passages.length + 1; bm++) {
         // bm = valeure à mettre dans le tableau (ID de l'event)
 
-        for (var k = 0; k < event_passages[k]; k++) {
+        for (var k = 0; k < event_passages[bm]; k++) {
             var added = false; // Passe à true lorsque le bonus ou malus a été ajouté à une case
             while (added != true) {
-                i = Math.floor(Math.random() * size);
-                if (tab[i] == 0) {
-                    tab[i] = bm;
+                n = Math.floor(Math.random()*num_stations);
+                if (event_stations[n] == 0) {
+                    event_stations[n] = bm;
                     added = true;
                 }
             }
         }
-    }*/
+    }
+    console.log(event_stations);
 }
