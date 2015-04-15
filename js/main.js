@@ -114,7 +114,9 @@ function get_question(user_response) { // Find a question in the JSON file
             $('#score').html( user_data["score"]);
 
             // Progression update
-            user_cookies("actual_progression", (user_data["score"] * 100 / tickets_to_end));
+            if((user_data["score"] * 100 / tickets_to_end) <= 100){
+                user_cookies("actual_progression", (user_data["score"] * 100 / tickets_to_end));
+            }
         } else {
             console.log("faux");
         }
