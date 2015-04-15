@@ -15,10 +15,9 @@
     <i class="loader"></i>
 
     <div id="barre_jeu">
-    <a href="level.html"><span class="metro ligne1" style="top:2%;left:4%;position:absolute;width:40px;">Ligne 1</span></a>
-    <span><img src="imgs/ticket.png" style="width:35px;position:absolute;right:10%;top:0.5%;">
-<div id="score"></div></span>
-    METROPOLITAIN
+        <a href="level.html"><span class="metro ligne1" style="top:2%;left:4%;position:absolute;width:40px;">Ligne 1</span></a>
+        <span><img src="imgs/ticket.png" style="width:35px;position:absolute;right:10%;top:0.5%;">
+<div id="score"></div></span> METROPOLITAIN
     </div>
 
     <div id="barre_lignes">
@@ -42,19 +41,21 @@
         </div>
 
         <div id="question"></div>
-        <div class="button raised questionnaire" id="rep1" onclick="get_question(0);"><p>A</p></div>
-        <div class="button raised questionnaire" id="rep2" onclick="get_question(1);"><p>B</p></div>
-        <div class="button raised questionnaire" id="rep3" onclick="get_question(2);"><p>C</p></div>
-        <div class="button raised questionnaire" id="rep4" onclick="get_question(3);"><p>D</p></div>
+        <div class="button raised questionnaire" id="rep1" onclick="get_question(0);"></div>
+        <div class="button raised questionnaire" id="rep2" onclick="get_question(1);"></div>
+        <div class="button raised questionnaire" id="rep3" onclick="get_question(2);"></div>
+        <div class="button raised questionnaire" id="rep4" onclick="get_question(3);"></div>
 
 
-        <div id="progress_bar"></div>
-        <div id="progress_bar2"></div>
+        <div class="progress_bar">
+            <div id="progress"></div>
+            <div id="progress2"></div>
+        </div>
 
     </div>
 
     <div id="barre_bas_jeu">
-        <img src="imgs/Volume.svg">
+        <img src="imgs/Volume.svg" id="sounds">
     </div>
 
     <div id="transition">
@@ -67,7 +68,7 @@
             <paper-ripple fit></paper-ripple>
         </a>
     </div>
-    
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/js.cookie.js"></script>

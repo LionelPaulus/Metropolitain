@@ -113,7 +113,7 @@ function get_question(user_response) { // Find a question in the JSON file
             user_cookies("score", (user_data["score"] + 1));
             $('#score').html( user_data["score"]);
 
-            // Progression update
+            // Score progression update
             if((user_data["score"] * 100 / tickets_to_end) <= 100){
                 user_cookies("actual_progression", (user_data["score"] * 100 / tickets_to_end));
             }
@@ -136,6 +136,9 @@ function update_stations() {
             $('#station_from').html(station_from);
             $('#station_to').html(station_to);
             $('#voyage').html(station_from + " -> " + station_to);
+            
+            // Stations progression update
+            $('#progress').css('width',((station - 1) * 100 / num_stations) + "%");
         });
     });
 }
@@ -167,6 +170,7 @@ function chrono() {
         $("#button").click(function (){
 
     $("#transition").fadeOut("fast");
+            update_stations();
     //$("#button2").hide();
             
             //$("#button2").click(function (){
@@ -177,7 +181,6 @@ function chrono() {
 });
         // resetChrono();
         station++;
-        update_stations();
         eventsHappening();
         // get_question();
     //});
