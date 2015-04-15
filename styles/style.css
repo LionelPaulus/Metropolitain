@@ -23,7 +23,28 @@ body{
     text-align: center;
 }
 
-#container > p {
+#sel_l {
+    text-align: center;
+    margin:0px 0px 15.8px 0px;
+    padding-top:49.8px;
+    font-size:1em;
+}
+
+#count-l {
+    top:0px;
+    right: 10%;
+    position: absolute;
+    font-size:1.2em;
+}
+
+#back {
+    width: 35px;
+    top:8px;
+    left: 10%;
+    position: absolute;
+}
+
+#container > h2 {
     text-align: center;
     margin:0px 0px 31.8px 0px;
     padding-top:21.8px;
@@ -277,6 +298,10 @@ position: absolute;
     padding-top:16px;
 }
 
+#temps{
+    padding-top:16px;
+}
+
 #score {
     position: absolute;
     right:5%;
@@ -311,7 +336,7 @@ position: absolute;
     height: 100%;
     background:white;
     position: absolute;
-    top: 161px;
+    top: 101px;
     margin: auto;
     background-image: url(../imgs/Background.jpg);
     background-size: contain;
@@ -331,7 +356,7 @@ position: absolute;
     border:2px solid black;
     cursor:pointer;
     background:#f6f6f6;
-    font-size:33px;
+    font-size:29px;
     border-radius:19px;
     color: black;
     display: table;
@@ -347,7 +372,7 @@ position: absolute;
     border:2px solid black;
     cursor:pointer;
     background:#f6f6f6;
-    font-size:27px;
+    font-size:24px;
     border-radius:19px;
     color: black;
     display: table;
