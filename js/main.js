@@ -5,8 +5,8 @@ var step = 0; // Number of the question
 var station = 1;
 var correct = null; // Correct answer of the question
 var user_data = [];
-var duree = 0;
-var duree_totale = 6;
+var duree = 6;
+var duree_totale = duree;
 var station_from;
 var station_to;
 var no_sound = false;
@@ -23,7 +23,7 @@ Cookies.defaults = {
 };
 
 // Loader
-$(window).load(function() {
+$(window).load(function () {
     $(".load").fadeOut("slow");
     $(".loader").fadeOut("slow");
 });
@@ -58,37 +58,37 @@ function reset_score() { /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 }
 
 function get_question(user_response) { // Find a question in the JSON file
-    if((step == num_questions)&&(num_questions != 0)){
+    if ((step == num_questions) && (num_questions != 0)) {
         // No more question
         window.alert("End of questions");
-        
+
         // Stop the chrono
         clearInterval(timerCh);
-    }else if (user_response == null) {
+    } else if (user_response == null) {
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/line_1.json?nocache=" + (new Date()).getTime(), function (json) {
                 // Counter for stations & questions
-                if(num_stations == 0){
+                if (num_stations == 0) {
                     var key = 0;
-                    for(key in json.stations) {
-                      if(json.stations.hasOwnProperty(key)) {
-                        num_stations++;
-                      }
+                    for (key in json.stations) {
+                        if (json.stations.hasOwnProperty(key)) {
+                            num_stations++;
+                        }
                     }
                     key = 0;
-                    for(key in json.questions) {
-                      if(json.questions.hasOwnProperty(key)) {
-                        num_questions++;
-                      }
+                    for (key in json.questions) {
+                        if (json.questions.hasOwnProperty(key)) {
+                            num_questions++;
+                        }
                     }
                     event_handler(); // Generate the events
                 }
-                
+
                 // Tickets needed to complete the level
-                if(tickets_to_end == 0){
+                if (tickets_to_end == 0) {
                     tickets_to_end = parseInt(json.tickets_to_end);
                 }
-                
+
                 // Question
                 $('#question').html(json.questions[step].title);
 
@@ -108,11 +108,11 @@ function get_question(user_response) { // Find a question in the JSON file
     } else {
         if (user_response == correct) {
             console.log("correct");
-            
+
             // Score update
             user_cookies("score", (user_data["score"] + 1));
             $('#score').html("Score: " + user_data["score"]);
-            
+
             // Progression update
             user_cookies("actual_progression", (user_data["score"] * 100 / tickets_to_end));
         } else {
@@ -140,35 +140,6 @@ function update_stations() {
 update_stations(); // First required update_stations
 
 
-
-function events(which_ID){
-if(which_ID==1){
-    if (user_data["score"]<Math.floor((station-1)/2)){
-        station=1;
-    }
-}
-    
-    else if(which_ID==2){
-        station=station-2;
-    }
-    
-    else if(which_ID==3){
-        station=station-2;
-    }
-    
-    else if(which_ID==4){
-        user_cookies("score", (user_data["score"] / 2));
-    }
-
-    else if(which_ID==5){
-        user_cookies("score", (user_data["score"] - 2));
-    }
-    
-    event_stations[station-1]=0;
-    console.log("new evenstation"+event_stations);
-}
-
-
 var timerCh;
 timerCh = setInterval(function () {
     chrono();
@@ -177,21 +148,23 @@ timerCh = setInterval(function () {
 function chrono() {
     if (duree <= 0) {
         clearInterval(timerCh);
-        resetChrono();
+        // resetChrono();
         station++;
         update_stations();
-        console.log("eventstation:"+event_stations[station-1]);
-        eventsHappening(event_stations[station-1]);
-        get_question();
+        eventsHappening();
+        // get_question();
     } else {
         duree--;
     }
-    
+
     // Radial progress bar update
-    var radial_progress_bar = (duree / (duree_totale-1));
-    $('#circle').circleProgress({value: radial_progress_bar});
+    var radial_progress_bar = (duree / (duree_totale - 1));
+    $(document).ready(function () {
+        $('#circle').circleProgress({
+            value: radial_progress_bar
+        });
+    });
     $('#temps').html(duree);
-    $('#statio ').html("station=" + station);
 
     if (station == num_stations) {
         clearInterval(timerCh);
@@ -200,14 +173,33 @@ function chrono() {
 }
 
 
-function eventsHappening(which_ID){
-    for (var i=0;i< event_stations.length;i++){
-        if(event_stations[i]==which_ID){
-            events(which_ID);
+function eventsHappening() {
+    if (event_stations[station - 2] > 0) {
+        console.log("event_stations[" + (station - 2) + "]>0");
+        events(event_stations[station - 2]);
+    }
+}
+
+function events(which_ID) {
+    console.log("STAAAART " + which_ID);
+    var old_station = station;
+    if (which_ID == 1) {
+        if (user_data["score"] < Math.floor((station - 2) / 2)) {
+            station = 1;
         }
+    } else if (which_ID == 2) {
+        station = station - 2;
+    } else if (which_ID == 3) {
+        station = station - 2;
+    } else if (which_ID == 4) {
+        user_cookies("score", Math.floor(user_data["score"] / 2));
+    } else if (which_ID == 5) {
+        user_cookies("score", Math.floor(user_data["score"] - 2));
+    }
+
+    // Delete the event in the board
+    event_stations[old_station - 2] = 0;
 }
-}
-            
 
 function resetChrono() {
     duree = duree_totale;
@@ -216,8 +208,8 @@ function resetChrono() {
 }
 chrono();
 
-function robber(){
-    
+function robber() {
+
 }
 
 function play_sound(sound_name) {
@@ -227,42 +219,41 @@ function play_sound(sound_name) {
 }
 
 function stop_souds() { // Pause every sound
-    /// MUST ADD CLASS "media" TO EVERY SOUND
-    if(no_sound == false){
-        no_sound = true;
-        var media = document.getElementsByClassName('media'); // C'était une virgule à la base au lieu de ;
-        i = media.length;
+        /// MUST ADD CLASS "media" TO EVERY SOUND
+        if (no_sound == false) {
+            no_sound = true;
+            var media = document.getElementsByClassName('media'); // C'était une virgule à la base au lieu de ;
+            i = media.length;
 
-        while (i--) {
-            media[i].pause();
+            while (i--) {
+                media[i].pause();
+            }
+        } else {
+            no_sound = false;
         }
-    } else {
-        no_sound = false;
     }
-}
-//
-function event_handler(){
+    //
+function event_handler() {
     // Full board with 0
-    for(var i = 0; i<num_stations; i++){
+    for (var i = 0; i < num_stations; i++) {
         event_stations[i] = 0;
     }
 
     // How many times the event must come
     var event_passages = [2, 1, 1, 1];
-    
+
     for (var bm = 1; bm < event_passages.length + 1; bm++) {
         // bm = valeure à mettre dans le tableau (ID de l'event)
 
         for (var k = 0; k < event_passages[bm - 1]; k++) {
             var added = false;
             while (added != true) {
-                n = Math.floor(Math.random()*num_stations);
-                if ((event_stations[n] == 0)&&(n > 0)) {
+                n = Math.floor(Math.random() * num_stations);
+                if ((event_stations[n] == 0) && (n > 1)) {
                     event_stations[n] = bm;
                     added = true;
                 }
             }
         }
     }
-    console.log(event_stations);
 }
