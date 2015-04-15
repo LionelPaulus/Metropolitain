@@ -135,9 +135,9 @@ body{
 #progress{
     bottom:0;
     height:9px;
-    width:77%;
     background: #f8c808;
     position: absolute;
+    z-index: 2;
 }
 
 
@@ -145,9 +145,10 @@ body{
     bottom:0;
     right:0;
     height:9px;
-    width:23%;
+    width:100%;
     background: #fff4c4;
     position: absolute;
+    z-index: 1;
 }
 
 
