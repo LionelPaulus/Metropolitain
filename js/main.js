@@ -214,3 +214,55 @@ function stop_souds() { // Pause every sound
         no_sound = false;
     }
 }
+
+function event_handler(){
+    // Full board with 0
+    var event_stations = [];
+    for(var i = 0; i<num_stations; i++){
+        event_stations[i] = 0;
+    }
+    
+    // How many times the event must come
+    var event_passages = [2, 1, 1, 1];
+    
+    // NO NEED
+    var events_id = [1, 2, 3, 4];
+    
+    var choix_event = null;
+    var n = null;
+    
+    var total = 0;
+    
+    for(var i = 0; i <= event_passages.length; i++){
+        total += event_passages[i];
+    }
+    
+    
+    while(added != true){
+        
+    }
+    for(i = 0; i<total; i++){
+        n = Math.floor(Math.random()*num_stations);
+        choix_event = Math.floor(Math.random()*events_id.length);
+    }
+    
+    if(event_stations[n] == 0){
+        event_stations[n] = events_id[choix_event];
+    }
+    
+    /*
+    for (var bm = 1; bm < 11; bm++) {
+        // bm = valeure à mettre dans le tableau (ID de l'event)
+
+        for (var k = 0; k < event_passages[k]; k++) {
+            var added = false; // Passe à true lorsque le bonus ou malus a été ajouté à une case
+            while (added != true) {
+                i = Math.floor(Math.random() * size);
+                if (tab[i] == 0) {
+                    tab[i] = bm;
+                    added = true;
+                }
+            }
+        }
+    }*/
+}
