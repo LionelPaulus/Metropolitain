@@ -1,7 +1,7 @@
 // Tests
 
 // Settings
-var step = 103; // Number of the question
+var step = 0; // Number of the question
 var station = 1;
 var stationTotale = 25;
 var correct = null; // Correct answer of the question
