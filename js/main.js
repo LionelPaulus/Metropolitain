@@ -162,6 +162,7 @@ if(which_ID==1){
         user_cookies("score", (user_data["score"] - 2));
     }
     
+    event_stations[station]=0;
 }
 
 
@@ -176,6 +177,7 @@ function chrono() {
         resetChrono();
         station++;
         update_stations();
+        eventsHappening(which_ID);
         get_question();
     } else {
         duree--;
@@ -192,6 +194,16 @@ function chrono() {
         // End of the level
     }
 }
+
+
+function eventsHappening(which_ID){
+    for (var i=0;i< event_stations.length;i++){
+        if(event_stations[i]==which_ID){
+            events(which_ID);
+        }
+}
+}
+            
 
 function resetChrono() {
     duree = duree_totale;
