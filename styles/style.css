@@ -188,6 +188,7 @@ body{
 
 .contain{
     text-align: center;
+    background: white;
 }
 
 #question {
@@ -233,13 +234,9 @@ body{
 
 #station_from{
     width: 30%;
-    margin-left: -10px;
     height: auto;
     float: left;
     background: #f6f6f6;
-    text-align: right;
-    clear:both;
-    text-overflow: ellipsis;
 }
 
 #station_from2{
@@ -253,8 +250,6 @@ body{
     height:auto;
     float: right;
     background: #f6f6f6;
-    text-align: left;
-    margin-right: -2%;
 }
 
 #barre_lignes:before{
