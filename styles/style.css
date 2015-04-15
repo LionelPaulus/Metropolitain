@@ -216,15 +216,14 @@ body{
 #barre_lignes{
     background:#f6f6f6;
     text-align: center;
-    font-size:1.1em;
+    font-size: 0.8em;
     font-family: 'Raleway';
-    padding:25px 0px 35px 0px;
-    margin: auto;
-    height: 50px;
+    height: 55px;
+    padding-top: 35px;
 }
 
 .entre_station span{
-    width: 45%;
+    width: 39%;
     height:7px;
     border-bottom:5px solid #f8c808;
     display:block;
@@ -233,7 +232,7 @@ body{
 
 
 #station_from{
-    width: 25%;
+    width: 30%;
     margin-left: -10px;
     height: auto;
     float: left;
@@ -250,7 +249,7 @@ body{
 }
 
 #station_to{
-    width:25%;
+    width: 30%;
     height:auto;
     float: right;
     background: #f6f6f6;
@@ -264,7 +263,7 @@ height: 20px;
 content:"\00a0";
 border-radius: 50%;
 background:#f8c808;
-left: 25%;
+left: 30%;
 position: absolute;
 }
 
@@ -274,8 +273,8 @@ height: 20px;
 content:"\00a0";
 border-radius: 50%;
 background:#f8c808;
-right: 25%;
-top: 95px;
+right: 30%;
+top: 106px;
 position: absolute;
 }
 
@@ -317,7 +316,7 @@ position: absolute;
     height: 100%;
     background:white;
     position: absolute;
-    top:20%;
+    top: 161px;
     margin: auto;
 }
 
@@ -385,8 +384,6 @@ position: absolute;
   right: .9em;
   top: .1em;
 }
-
-
 
 
 
