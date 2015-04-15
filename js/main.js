@@ -137,28 +137,33 @@ function update_stations() {
 }
 update_stations(); // First required update_stations
 
-function bad_guy() { // Ticket checker witch come 2 times at the first questions and 1 time after
-    if(bad_guy_stops[1] == null){
-        bad_guy_stops[1] = Math.floor((Math.random()*4)+1);
-        bad_guy_stops[2] = Math.floor((Math.random()*5)+8);
-        bad_guy_stops[3] = Math.floor((Math.random()*7)+18);
+
+
+function events(which_ID){
+if(which_ID==1){
+    if (user_data["score"]<Math.floor((station-1)/2)){
+        station=1;
+    }
+}
+    
+    else if(which_ID==2){
+        station=station-2;
     }
     
-    console.log("passage1="+bad_guy_stops[1]);
-    console.log("passage2="+bad_guy_stops[2]);
-    console.log("passage3="+bad_guy_stops[3]);
+    else if(which_ID==3){
+        station=station-2;
+    }
     
-    if (station==bad_guy_stops[1] && user_data["score"]<1){
-        console.log('watno');
+    else if(which_ID==4){
+        user_cookies("score", (user_data["score"] / 2));
     }
-    else if(station==bad_guy_stops[2] && user_data["score"]<7){
-        console.log('wat');
-    }
-    else if(station==bad_guy_stops[3] && user_data["score"]<12){
-        console.log('watt');
+
+    else if(which_ID==5){
+        user_cookies("score", (user_data["score"] - 2));
     }
     
 }
+
 
 var timerCh;
 timerCh = setInterval(function () {
@@ -179,7 +184,7 @@ function chrono() {
     // Radial progress bar update
     var radial_progress_bar = (duree / (duree_totale-1));
     $('#circle').circleProgress({value: radial_progress_bar});
-    $('#temps').html("durée=" + duree);
+    $('#temps').html(duree);
     $('#statio ').html("station=" + station);
 
     if (station == num_stations) {
