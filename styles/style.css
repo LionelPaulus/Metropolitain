@@ -489,6 +489,7 @@ body {
 
 .progress_bar {
     position: relative;
+    margin-top: 20px;
 }
 
 #sounds {
