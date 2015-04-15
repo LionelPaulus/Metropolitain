@@ -343,10 +343,10 @@
       {
          "title":"Quels sont les terminus de la ligne 1?",
          "answers":[
-            "TEST Porte d'Orleans-Porte de Clignancourt",
-            "TEST La Defense-Chateau de Vincennes",
-            "TEST Place d'Italie-Bobigny",
-            "TEST Charles de Gaulle / ETOILE-NATION"
+            "Porte d'Orleans-Porte de Clignancourt",
+            "La Defense-Chateau de Vincennes",
+            "Place d'Italie-Bobigny",
+            "Charles de Gaulle / ETOILE-NATION"
          ],
          "correct":1
       },
