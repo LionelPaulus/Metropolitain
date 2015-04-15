@@ -128,6 +128,8 @@ function update_stations() {
             station_to = json.stations[station];
 
             // Stations update
+            $('#station_from').html(station_from);
+            $('#station_to').html(station_to);
             $('#voyage').html(station_from + " -> " + station_to);
         });
     });

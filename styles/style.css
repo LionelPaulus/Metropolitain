@@ -181,6 +181,129 @@ body{
     transition-delay: 0s;
 }
 
+
+
+/*    ------ Jeu ------     */
+
+.contain{
+    text-align: center;
+}
+
+#question {
+    width:50%;
+    height:80px;
+    margin:auto;
+    padding-top:50px;
+}
+
+#barre_jeu{
+    background:white;
+    text-align: center;
+    font-size:23px;
+    font-family: 'Raleway';
+    padding:25px 0px 25px 0px;
+}
+
+#barre_bas_jeu{
+    background:#f6f6f6;
+    text-align: right;
+    width: 100%;
+    bottom:0px;
+}
+
+
+#barre_lignes{
+    background:#f6f6f6;
+    text-align: center;
+    font-size:23px;
+    font-family: 'Raleway';
+    padding:25px 0px 35px 0px;
+    margin: auto;
+    height: 50px;
+}
+
+#station_from{
+    width:30%;
+    height: auto;
+    left:2%;
+    display: inline-block;
+    position: absolute;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+#station_to{
+    width:30%;
+    height: auto;
+    right:2%;
+    display: inline-block;
+    position: absolute;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.entre_station{
+    padding:0px 10px 0px 10px;
+    display: inline-block;
+}
+
+/*
+#cercle{
+    background:#f8c808;
+  border-radius:50%;
+  width:20px;
+  height:20px;
+    left: 40%;
+    position: absolute;
+}
+
+#cercle2{
+    background:#f8c808;
+  border-radius:50%;
+  width:20px;
+  height:20px;
+    right: 40%;
+    position: absolute;
+}
+
+#line {
+    position: absolute;
+    height: 4px;
+    width: 18%;
+    background: #f8c808;
+    top:21%;
+    left:41%;
+}
+*/
+
+#circle{
+    padding-top:26px;
+}
+
+.answers {
+    width:93%;
+    max-width:400px;
+    height:50px;
+    margin-bottom: 30px;
+}
+
+#progress_bar{
+    left: 0;
+    bottom:0;
+    height:9px;
+    width:90%;
+    background: #f8c808;
+}
+
+
+#progress_bar2{
+    right: 0;
+    bottom:0;
+    height:9px;
+    width:10%;
+    background: #fff4c4;
+}
+
 /*    ------ Autres ------     */
 
 
@@ -194,7 +317,7 @@ body{
   left: 50%;
   margin: -1.5em;
   position: absolute;
-  top: 290%;
+  top: 50%;
   width: 2em;
     z-index: 20;
 }
@@ -213,4 +336,30 @@ body{
 }
 @-webkit-keyframes load {
   100% { transform: rotate(360deg); }
+}
+
+.entre_station span{
+
+    width:500px;
+    height:4px;
+    border-bottom:2px dashed red; 
+    position:relative;
+    display:block;
+}
+
+.entre_station span:after, .entre_station span:before{
+width:10px;
+content:"\00a0";
+height:10px;
+border-radius: 50%;
+background:red;
+top:0;
+position:absolute;
+}
+
+.entre_station span:after{
+right:0;
+}
+.entre_station span:before{
+left:0;
 }
