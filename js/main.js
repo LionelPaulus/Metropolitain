@@ -150,7 +150,7 @@ timerCh = setInterval(function () {
 function chrono() {
     
    $(window).load(function(){
-  $("#transition").hide();
+  $("#transition").fadeOut("fast");
    //$("#button2").hide();
 });
     
@@ -158,7 +158,7 @@ function chrono() {
         clearInterval(timerCh);
         
         
-    $("#transition").show();
+    $("#transition").fadeIn("fast");
     //$("#button2").show();
     
 
@@ -166,7 +166,7 @@ function chrono() {
         
         $("#button").click(function (){
 
-    $("#transition").hide();
+    $("#transition").fadeOut("fast");
     //$("#button2").hide();
             
             //$("#button2").click(function (){
@@ -194,7 +194,7 @@ function chrono() {
             value: radial_progress_bar
         });
     });
-    $('#temps').html(duree);
+    $('#temps').html(duree+"'");
 
     if (station == num_stations) {
         clearInterval(timerCh);
