@@ -180,7 +180,7 @@ function chrono() {
         duree--;
     }
 
-    $('#temps').html(duree);
+    $('#temps').html(duree +"'");
     $('#statio ').html("station=" + station);
 
     if (station == num_stations) {
