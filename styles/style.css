@@ -223,6 +223,14 @@ body{
     height: 50px;
 }
 
+.entre_station span{
+    width:100%;
+    height:7px;
+    border-bottom:5px solid #f8c808;
+    display:block;
+}
+
+
 #station_from{
     width:25%;
     height: auto;
@@ -232,6 +240,12 @@ body{
     background: #f6f6f6;
     text-align: right;
     clear:both;
+}
+
+#station_from2{
+    width:75%;
+    height: auto;
+    float: left;
 }
 
 #station_to{
@@ -324,27 +338,49 @@ padding-left:15px;
   100% { transform: rotate(360deg); }
 }
 
-.entre_station span{
-    width:100%;
-    height:7px;
-    border-bottom:5px solid #f8c808;
-    display:block;
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-/*
-.entre_station span:after, .entre_station span:before{
-width:10px;
-content:"\00a0";
-height:10px;
-border-radius: 50%;
-background:red;
-top:0;
-position:absolute;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-.entre_station span:after{
-right:0;
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
-.entre_station span:before{
-left:0;
-}*/
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
