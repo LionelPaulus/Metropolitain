@@ -28,19 +28,19 @@
 
     <a href="level.html">
         <div class="button raised green transition big">
-            <p>PLAY</p>
+            <p>JOUER</p>
             <paper-ripple fit></paper-ripple>
         </div>
     </a>
 
     <a href="#?custom=true&width=108%&height=100%" rel="prettyPhoto">
         <div class="button raised grey transition" style="margin-top:60px;">
-            <p>RULES</p>
+            <p>RÈGLES</p>
             <paper-ripple fit></paper-ripple>
         </div>
     </a>
 
-    <a href="#?custom=true&width=108%&height=100%" rel="prettyPhoto2">
+    <a href="#?custom=true&width=108%&height=100%" id="rule-pop" rel="prettyPhoto2">
         <div class="button raised grey transition" style="margin-top:30px;">
             <p>INFO</p>
             <paper-ripple fit></paper-ripple>
@@ -64,14 +64,15 @@
         $("a[rel^='prettyPhoto']").prettyPhoto({
             custom_markup: '<div style="text-align:center;font-size:16px;font-family:helvetica;padding-top:10px;">RÈGLES DU JEU</div><br>-Une bonne réponse à une question vous permet de gagner un ticket.<br><br>-Si vous n’avez pas le nombre de tickets nécessaire et que le contrôleur passe, vous retournez au début de la ligne. Lorsqu’un musicien entre dans la rame, vous lui donnez un ticket de métro. Des pickpockets peuvent survenir et vous voler vos tickets de métro. Lorsque survient une grève, ou un accident de voyageur vous retournez deux stations en arrière. Une fois arrivé au terminus avec 30 tickets, vous débloquez la ligne suivante.',
         });
-    });
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
+        
         $("a[rel^='prettyPhoto2']").prettyPhoto({
             custom_markup: '<div style="text-align:center;font-size:16px;font-family:helvetica;padding-top:10px;">INFO</div><br>La Webapp Metroplolitain est desormais disponible sur tous vos navigateurs, aussi bien pour smartphone et tablette que sur ordinateur.<br><br>Metropolitain est un jeux ludique axé sur le metro Parisien, très prenant il saura remplir vos moments d’ennui et vous ne pourrez plus vous en passer.<br><br>Réalisé à HETIC - P2019',
         });
+        
+        if(mobileAndTabletcheck)==false{
+            $("#rule-pop").attr("href","#?custom=true&width=138%&height=100%");
+        }
+       
     });
 </script>
 

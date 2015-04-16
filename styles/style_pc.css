@@ -1,12 +1,7 @@
-/*
-body {
+.bg1 {
     background: url(../imgs/Background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    font-family: 'Raleway';
+    background-size: contain;
 }
-*/
 
 
 
@@ -38,7 +33,7 @@ article {
     margin: auto;
     width: 730px;
     position:relative;
-    padding-top:250px;
+    padding-top:70px;
 }
 
 iframe {
@@ -59,7 +54,6 @@ footer {
     height: 50px;
     width: 600px;
     margin: auto;
-    background: #ffffff;
 }
 
 footer > p {
