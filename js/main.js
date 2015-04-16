@@ -56,6 +56,7 @@ function play_sound(sound_name) {
 function stop_sounds() { // Pause every sound
     if (no_sound == false) {
         no_sound = true;
+        $("#intro").trigger('pause');
         $('#sound').attr('src','imgs/VolumeMute.png');
     } else {
         no_sound = false;
