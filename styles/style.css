@@ -62,25 +62,6 @@ a{
     padding: 25px 0px 25px 0px;
 }
 
-/*
-#play {
-    top: 25%;
-    left: 50%;
-    margin-top: 0px;
-    margin-left: -121px;
-    color: #fff;
-    width: 242px;
-    height: 90px;
-    cursor: pointer;
-    background: #f6f6f6;
-    font-size: 37px;
-    border-radius: 19px;
-    position: absolute;
-    color: black;
-    border: 2px solid black;
-}
-*/
-
 #rules {
     top: 56%;
     left: 50%;
@@ -406,18 +387,7 @@ a{
     color: black;
     display: table;
 }
-<<<<<<< HEAD
 
-#transition{
-    width:200px;
-    height:200px;
-    background-color:green;
-    z-index:99;
-}
-
-
-=======
->>>>>>> origin/master
 /*    ------ Autres ------     */
 
 .loader {
