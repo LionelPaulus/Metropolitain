@@ -18,9 +18,6 @@ function get_question(user_response) { // Find a question in the JSON file
         // No more question
         step = 0;
         user_cookies("actual_station", 0);
-
-        // Stop the chrono
-        clearInterval(timerCh);
     } else if (user_response == null) {
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/line_1.json", function (json) {
