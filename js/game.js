@@ -195,7 +195,7 @@ function events(which_ID) {
                     var controleur_phrase = " " + controleur_tickets + " tickets étaient nécessaires pour cette zone.";
                 }
             } else {
-                user_cookies("score", user_date["score"] - controleur_tickets);
+                user_cookies("score", user_data["score"] - controleur_tickets);
                 var controleur_phrase = " Vous avez payé " + controleur_tickets + " tickets pour cette zone.";
             }
         } else if (which_ID == 2) { // Musicienne
