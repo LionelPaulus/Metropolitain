@@ -74,7 +74,7 @@
         
         if(mobileAndTabletcheck()){
             $("#rule-pop").attr("href","#?custom=true&width=138%&height=100%");
-        }else{
+        }else if(!ereg("pc",$_SERVER["REQUEST_URI"])){
             window.location.href="pc/";
         }
     });
