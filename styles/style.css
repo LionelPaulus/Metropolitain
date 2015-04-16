@@ -401,7 +401,22 @@ a{
     display: table;
 }
 
-/*    ------ Autres ------     */
+.progress_bar {
+    position: relative;
+    margin-top: 20px;
+}
+
+#sounds {
+    padding-top: 3px;
+}
+
+@font-face {
+    font-family: 'Futura''Futura Std';
+    src: url('fonts/futura.ttc')
+url('fonts/FuturaStd-Medium.otf');
+}
+
+/*    ------ Loader ------     */
 
 .loader {
     animation: load 1s linear infinite;
@@ -429,6 +444,7 @@ a{
     top: .1em;
 }
 
+/*
 @keyframes load {
     100% {
         transform: rotate(360deg);
@@ -483,21 +499,10 @@ a{
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+*/
 
-.progress_bar {
-    position: relative;
-    margin-top: 20px;
-}
 
-#sounds {
-    padding-top: 3px;
-}
-
-@font-face {
-    font-family: 'Futura''Futura Std';
-    src: url('fonts/futura.ttc')
-url('fonts/FuturaStd-Medium.otf');
-}
+/*Popup évènement */
 
 #popup{
     width: 70%;
@@ -543,6 +548,8 @@ url('fonts/FuturaStd-Medium.otf');
 }
 
 
+/*Popup dévérouillage lignes */
+
 #popup2{
     width: 70%;
     max-width: 500px;
@@ -564,6 +571,7 @@ url('fonts/FuturaStd-Medium.otf');
     height: 32px;
     left: 5.4%;
     margin-top: 5.4%;
+    cursor: pointer;
 }
 
 #popup2 p{
@@ -586,4 +594,51 @@ url('fonts/FuturaStd-Medium.otf');
 #popup2 .ticket{
     width: 30px;
     position: absolute;
+}
+
+
+/*Popup en cas de victoire */
+
+
+#popup_win{
+    width: 70%;
+    max-width: 500px;
+    height: 80%;
+    background-color: #F6F6F6;
+    border: 5px solid #383838;
+    border-radius: 40px;
+    top:17%;
+    position: absolute;
+    z-index: 20;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    display: none;
+}
+
+#popup_win .icon{
+    width: 50%;
+    margin: auto;
+    position: relative;
+    margin-left: 25%;
+    margin-top:20px;
+}
+
+#popup_win .echap{
+    position: absolute;
+    height: 5%;
+    margin-left: 5.4%;
+    margin-top: 5.4%;
+}
+
+#popup_win h1{
+    text-align: center;
+    font-family: "futura";
+}
+
+#popup_win p{
+    text-align: center;
+    font-family: "futura std";
+    padding:5px;
 }
