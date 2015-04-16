@@ -528,3 +528,50 @@ url('fonts/FuturaStd-Medium.otf');
     font-family: "futura std";
     padding:5px;
 }
+
+
+#popup2{
+    width: 70%;
+    max-width: 500px;
+    height: 60%;
+    background-color: #F6F6F6;
+    border: 5px solid #383838;
+    border-radius: 40px;
+    top:17%;
+    position: absolute;
+    z-index: 20;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    display: none;
+}
+
+#popup2 .echap{
+    position: absolute;
+    height: 32px;
+    left: 5.4%;
+    margin-top: 5.4%;
+}
+
+#popup2 p{
+    text-align: center;
+    font-family: "futura std";
+    position: relative;
+    margin-top: 20%;
+    padding:10px;
+    line-height: 38px;
+    font-size:1em;
+}
+
+#popup2 h1{
+    text-align: center;
+    font-family: "futura std";
+    font-size:0.8em;
+    padding-top:15px;
+}
+
+#popup2 .ticket{
+    width: 30px;
+    position: absolute;
+}
