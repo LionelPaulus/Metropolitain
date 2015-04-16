@@ -27,7 +27,7 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
         Cookies.set('actual_progression', 0);
         user_data["actual_progression"] = 0;
         Cookies.set("line_progression", 1);
-        user_data["line_progression"] = 0;
+        user_data["line_progression"] = 1;
         Cookies.set('lines_finished', 0); // Levels accomplished
         user_data["lines_finished"] = 0;
     } else {
