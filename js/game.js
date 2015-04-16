@@ -112,9 +112,12 @@ update_stations(); // First required update_stations
 
 
 var timerCh;
-timerCh = setInterval(function () {
-    chrono();
-}, 1000);
+setTimeout(function () {
+    timerCh = setInterval(function () {
+        chrono();
+    }, 1000);
+}, 500);
+
 
 function chrono() {
 
