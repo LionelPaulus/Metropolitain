@@ -54,12 +54,27 @@ function stop_souds() { // Pause every sound
         var media = document.getElementsByClassName('media'); // C'était une virgule à la base au lieu de ;
         i = media.length;
 
+        console.log("detecté");
+        
         while (i--) {
             media[i].pause();
         }
     } else {
         no_sound = false;
     }
+}
+
+function soundOff() {
+    console.log("detecté");
+    stop_sounds();
+    $("#sound").hover(
+        function () {
+            $(this).attr('src', 'Volume.svg');
+        },
+        function () {
+            $(this).attr('src', 'monimage2.jpg');
+        }
+    );
 }
 
 function verifLevel(level) {
@@ -85,15 +100,3 @@ window.mobileAndTabletcheck = function () {
     return check;
 }
 
-function soundOff() {
-    console.log("detecté");
-    stop_sounds();
-    $("#sound").hover(
-        function () {
-            $(this).attr('src', 'Volume.svg');
-        },
-        function () {
-            $(this).attr('src', 'monimage2.jpg');
-        }
-    );
-}
