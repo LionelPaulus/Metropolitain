@@ -53,14 +53,16 @@ function play_sound(sound_name) {
 function stop_sounds() { // Pause every sound
     /// MUST ADD CLASS "media" TO EVERY SOUND
     console.log("detecté");
+    $('#sound').on({
+           'click': function(){
+        $('#sound').attr('src','imgs/VolumeMute.png');
+    }
+});
     if (no_sound == false) {
         no_sound = true;
-        var media = document.getElementsByClassName('media'); // C'était une virgule à la base au lieu de ;
-        i = media.length;
-
-        while (i--) {
-            media[i].pause();
-        }
+        
+        
+       
     } else {
         no_sound = false;
     }
@@ -92,12 +94,5 @@ window.mobileAndTabletcheck = function () {
 function soundOff() {
     
     stop_sounds();
-    $("#sound").hover(
-        function () {
-            $(this).attr('src', 'Volume.svg');
-        },
-        function () {
-            $(this).attr('src', 'monimage2.jpg');
-        }
-    );
+    
 }
