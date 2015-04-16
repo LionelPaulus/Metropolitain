@@ -166,6 +166,9 @@ function chrono() {
     if (station == num_stations) {
         clearInterval(timerCh);
         $("#popup_win").fadeIn("fast");
+        // Reset
+        station = 1;
+        
         // Stations progression 100%
         $('#progress').css('width', "100%");
     }
