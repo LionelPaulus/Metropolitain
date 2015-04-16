@@ -1,12 +1,12 @@
-*{
+* {
     font-family: 'Roboto';
 }
-    
+
 body {
     margin: 0;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -39,21 +39,21 @@ a{
 
 #sel_l {
     text-align: center;
-    margin:0px 0px 15.8px 0px;
-    padding-top:49.8px;
-    font-size:1em;
+    margin: 0px 0px 15.8px 0px;
+    padding-top: 49.8px;
+    font-size: 1em;
 }
 
 #count-l {
-    top:0px;
+    top: 0px;
     right: 10%;
     position: absolute;
-    font-size:1.2em;
+    font-size: 1.2em;
 }
 
 #back {
     width: 35px;
-    top:8px;
+    top: 8px;
     left: 10%;
     position: absolute;
 }
@@ -92,10 +92,7 @@ a{
     margin-bottom: 20px;
     font-size: 32px;
 }
-
-
 /*  ----- Sélection lignes ------  */
-
 
 #terminus {
     top: 4%;
@@ -202,7 +199,6 @@ a{
     color: #fff;
 }
 
-
 .button.redq {
     background-color: #F34235;
     color: #fff;
@@ -211,7 +207,6 @@ a{
 .button.transition p {
     padding-top: 12px;
 }
-
 /*    ------ Jeu ------     */
 
 .contain {
@@ -336,11 +331,9 @@ a{
 #transition {
     width: 100%;
     height: 550px;
-    bottom: 0;
     background: white;
     position: absolute;
-    top: 253px;
-    margin: auto;
+    top: 161px;
     background-image: url(../imgs/Background.jpg);
     background-size: contain;
     z-index: 10;
@@ -355,13 +348,13 @@ a{
     margin-right: auto;
     margin-top: 80px;
     width: 50%;
-    max-width:150px;
-    height:80px;
-    border:2px solid black;
-    cursor:pointer;
-    background:#f6f6f6;
-    font-size:24px;
-    border-radius:19px;
+    max-width: 150px;
+    height: 80px;
+    border: 2px solid black;
+    cursor: pointer;
+    background: #f6f6f6;
+    font-size: 24px;
+    border-radius: 19px;
     color: black;
     display: table;
 }
@@ -377,13 +370,9 @@ a{
 
 @font-face {
     font-family: 'Futura''Futura Std';
-    src: url('fonts/futura.ttc')
-url('fonts/FuturaStd-Medium.otf');
+    src: url('fonts/futura.ttc') url('fonts/FuturaStd-Medium.otf');
 }
-
-
 /*    ------ Loader ------     */
-
 
 .loader {
     animation: load 1s linear infinite;
@@ -410,72 +399,68 @@ url('fonts/FuturaStd-Medium.otf');
     right: .9em;
     top: .1em;
 }
-
-
 /*Popup évènement */
 
-#popup{
+#popup {
     width: 70%;
     max-width: 500px;
     background-color: #F6F6F6;
     border: 5px solid #383838;
     border-radius: 40px;
-    top:17%;
+    top: 17%;
     position: absolute;
     z-index: 20;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     display: none;
 }
 
-#popup .icon{
+#popup .icon {
     width: 50%;
     margin: auto;
     position: relative;
     margin-left: 25%;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
-#popup .echap{
+#popup .echap {
     position: absolute;
     height: 5%;
     margin-left: 5.4%;
     margin-top: 5.4%;
 }
 
-#popup h1{
+#popup h1 {
     text-align: center;
     font-family: "futura";
 }
 
-#popup p{
+#popup p {
     text-align: center;
     font-family: "futura std";
-    padding:5px;
+    padding: 5px;
 }
-
-
 /*Popup dévérouillage lignes */
 
-#popup2{
+#popup2 {
     width: 70%;
     max-width: 500px;
     height: 60%;
     background-color: #F6F6F6;
     border: 5px solid #383838;
     border-radius: 40px;
-    top:17%;
+    top: 17%;
     position: absolute;
     z-index: 20;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#popup2 .echap{
+#popup2 .echap {
     position: absolute;
     height: 32px;
     left: 5.4%;
@@ -483,71 +468,68 @@ url('fonts/FuturaStd-Medium.otf');
     cursor: pointer;
 }
 
-#popup2 p{
+#popup2 p {
     text-align: center;
     font-family: "futura std";
     position: relative;
     margin-top: 20%;
-    padding:10px;
+    padding: 10px;
     line-height: 38px;
-    font-size:1em;
+    font-size: 1em;
 }
 
-#popup2 h1{
+#popup2 h1 {
     text-align: center;
     font-family: "futura std";
-    font-size:0.8em;
-    padding-top:15px;
+    font-size: 0.8em;
+    padding-top: 15px;
 }
 
-#popup2 .ticket{
+#popup2 .ticket {
     width: 30px;
     position: absolute;
 }
-
-
 /*Popup en cas de victoire */
 
-
-#popup_win{
+#popup_win {
     width: 70%;
     max-width: 500px;
     height: 80%;
     background-color: #F6F6F6;
     border: 5px solid #383838;
     border-radius: 40px;
-    top:17%;
+    top: 17%;
     position: absolute;
     z-index: 20;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     display: none;
 }
 
-#popup_win .icon{
+#popup_win .icon {
     width: 50%;
     margin: auto;
     position: relative;
     margin-left: 25%;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
-#popup_win .echap{
+#popup_win .echap {
     position: absolute;
     height: 5%;
     margin-left: 5.4%;
     margin-top: 5.4%;
 }
 
-#popup_win h1{
+#popup_win h1 {
     text-align: center;
     font-family: "futura";
 }
 
-#popup_win p{
+#popup_win p {
     text-align: center;
     font-family: "futura std";
-    padding:5px;
+    padding: 5px;
 }
