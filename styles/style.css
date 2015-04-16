@@ -72,6 +72,16 @@ a {
     padding: 25px 0px 25px 0px;
 }
 
+#point {
+    background: black;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 36px;
+    color: white;
+    position: absolute;
+}
+
 #barre_bas {
     background: #f6f6f6;
     text-align: right;
