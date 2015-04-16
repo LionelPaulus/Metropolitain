@@ -57,7 +57,7 @@ function get_question(user_response) { // Find a question in the JSON file
 
                 // Next question
                 step += 1;
-                
+
                 // Question save in cookies
                 user_cookies("actual_station", parseInt(step));
                 console.log(user_data["actual_station"]);
@@ -113,65 +113,65 @@ function update_stations() {
 update_stations(); // First required update_stations
 
 $(window).load(function () {
-var timerCh;
-setTimeout(function () {
-    timerCh = setInterval(function () {
-        chrono();
-    }, 1000);
-}, 500);
+    var timerCh;
+    setTimeout(function () {
+        timerCh = setInterval(function () {
+            chrono();
+        }, 1000);
+    }, 500);
 });
 
 function chrono() {
 
     $(window).load(function () {
         $("#transition").hide();
-    });    
-    
-    if (duree <= 1) {
-        clearInterval(timerCh);
+
+        if (duree <= 1) {
+            clearInterval(timerCh);
 
 
-        $("#transition").fadeIn("fast");
+            $("#transition").fadeIn("fast");
 
-        $("#button").click(function () {
-            $("#transition").fadeOut("fast");
-            update_stations();
-            get_question();
-            $("button2").click(function () {
-                window.location.href = 'game.html';
+            $("#button").click(function () {
+                $("#transition").fadeOut("fast");
+                update_stations();
+                get_question();
+                $("button2").click(function () {
+                    window.location.href = 'game.html';
+                });
+
             });
 
-        });
+            station++;
 
-        station++;
-        
-        // Line_progression update
-        user_cookies("line_progression", station);
+            // Line_progression update
+            user_cookies("line_progression", station);
 
-        eventsHappening();
+            eventsHappening();
 
-    } else {
-        duree--;
-        if(duree==3){
-            play_sound("alarme");
+        } else {
+            duree--;
+            if (duree == 3) {
+                play_sound("alarme");
+            }
         }
-    }
 
-    // Radial progress bar update
-    var radial_progress_bar = (duree / (duree_totale - 1));
-    $(document).ready(function () {
-        $('#circle').circleProgress({
-            value: radial_progress_bar
+        // Radial progress bar update
+        var radial_progress_bar = (duree / (duree_totale - 1));
+        $(document).ready(function () {
+            $('#circle').circleProgress({
+                value: radial_progress_bar
+            });
         });
+        $('#temps').html(duree + "'");
+        // possible +1 ??? 
+        if (station == num_stations) {
+            clearInterval(timerCh);
+            $("#popup_win").fadeIn("fast");
+            // Stations progression 100%
+            $('#progress').css('width', "100%");
+        }
     });
-    $('#temps').html(duree + "'");
-    // possible +1 ??? 
-    if (station == num_stations) {
-        clearInterval(timerCh);
-        $("#popup_win").fadeIn("fast");
-        // Stations progression 100%
-        $('#progress').css('width', "100%");
-    }
 }
 
 
