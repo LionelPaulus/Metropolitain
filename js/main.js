@@ -65,8 +65,6 @@ function stop_sounds() { // Pause every sound
 }
 
 function verifLevel(level) {
-
-
     if (user_data["score"] < ((level * 50) - 50)) {
         $("#popup2").fadeIn("fast");
 
