@@ -38,7 +38,7 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
         user_data["actual_progression"] = parseInt(Cookies.get('actual_progression'));
         user_data["line_progression"] = parseInt(Cookies.get('line_progression'));
         user_data["lines_finished"] = Cookies.get('lines_finished');
-        user_data["actual_station"] = Cookies.get('actual_stations');
+        user_data["actual_station"] = Cookies.get('actual_station');
     }
     $('#score').html(user_data["score"]);
 }
