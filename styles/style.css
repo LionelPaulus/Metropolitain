@@ -544,3 +544,10 @@ a {
     font-family: "futura std";
     padding: 5px;
 }
+
+.metro.ligne1 {
+    top: 2.4%;
+    left: 4%;
+    position: absolute;
+    width: 40px;
+}
