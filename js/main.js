@@ -166,7 +166,7 @@ timerCh = setInterval(function () {
 function chrono() {
     
    $(window).load(function(){
-  $("#transition").fadeOut("fast");
+  $("#transition").hide();
 });
     
     if (duree <= 0) {
@@ -174,9 +174,11 @@ function chrono() {
         
         
     $("#transition").fadeIn("fast");
+        
         $("#button").click(function () {
     $("#transition").fadeOut("fast");
             update_stations();
+            get_question();
         $("button2").click(function () {
             window.location.href='game.html';
         });
@@ -184,6 +186,7 @@ function chrono() {
         });
 
         station++;
+        
         eventsHappening();
 
 
