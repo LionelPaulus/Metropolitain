@@ -81,3 +81,16 @@ window.mobileAndTabletcheck = function () {
     })(navigator.userAgent || navigator.vendor || window.opera);
     return check;
 }
+
+function soundOff() {
+    console.log("detecté");
+    stop_sounds();
+    $("#sound").hover(
+        function () {
+            $(this).attr('src', 'Volume.svg');
+        },
+        function () {
+            $(this).attr('src', 'monimage2.jpg');
+        }
+    );
+}
