@@ -1,0 +1,89 @@
+{
+   "events":[
+      {
+         "code_name":"controleur",
+         "title":{
+            "positive":"Bon citoyen!",
+            "negative":"Fraudeur, arrête de frauder !"
+         },
+         "description":{
+            "positive":"Bon citoyen ! Vous êtes sur la bonne voie, vous pouvez continuer votre chemin !",
+            "negative":"Tu n'as pas de titre de transport, retourne au début de la ligne !!"
+         },
+         "image":{
+            "positive":"controleurcontent.png",
+            "negative":"controleur.png"
+         },
+         "removed_tickets":null,
+         "stations_back_away":null
+      },
+      {
+         "code_name":"musicienne",
+         "title":{
+            "positive":null,
+            "negative":"Quelle Générosité !"
+         },
+         "description":{
+            "positive":null,
+            "negative":"Merci pour le ticket !"
+         },
+         "image":{
+            "positive":null,
+            "negative":"music.png"
+         },
+         "removed_tickets":"1",
+         "stations_back_away":null
+      },
+      {
+         "code_name":"greve",
+         "title":{
+            "positive":null,
+            "negative":"Pas content !"
+         },
+         "description":{
+            "positive":null,
+            "negative":"En raison d'une grève, reculez de deux stations. Veuillez nous excuser pour la gène occasionnée."
+         },
+         "image":{
+            "positive":null,
+            "negative":"greviste.png"
+         },
+         "removed_tickets":null,
+         "stations_back_away":"2"
+      },
+      {
+         "code_name":"incident_voyageur",
+         "title":{
+            "positive":null,
+            "negative":"Incident voyageur"
+         },
+         "description":{
+            "positive":null,
+            "negative":"Reculez de deux stations."
+         },
+         "image":{
+            "positive":null,
+            "negative":"personnagemalade.png"
+         },
+         "removed_tickets":null,
+         "stations_back_away":"2"
+      },
+      {
+         "code_name":"pickpocket",
+         "title":{
+            "positive":null,
+            "negative":"Au voleur !"
+         },
+         "description":{
+            "positive":null,
+            "negative":"Un pickpocket vient de vous voler la moitié de vos tickets ! Navré..."
+         },
+         "image":{
+            "positive":null,
+            "negative":"pickpocket.png"
+         },
+         "removed_tickets":null,
+         "stations_back_away":null
+      }
+   ]
+}
