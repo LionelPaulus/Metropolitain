@@ -72,50 +72,6 @@ a{
     padding: 25px 0px 25px 0px;
 }
 
-#rules {
-    top: 56%;
-    left: 50%;
-    margin-top: 0px;
-    margin-left: -96px;
-    color: #fff;
-    width: 192px;
-    height: 70px;
-    cursor: pointer;
-    background: #f6f6f6;
-    font-size: 27px;
-    border-radius: 19px;
-    position: absolute;
-    color: black;
-    border: 2px solid black;
-}
-
-#info {
-    top: 74%;
-    left: 50%;
-    margin-top: 0px;
-    margin-left: -96px;
-    color: #fff;
-    width: 192px;
-    height: 70px;
-    cursor: pointer;
-    background: #f6f6f6;
-    font-size: 27px;
-    border-radius: 19px;
-    position: absolute;
-    color: black;
-    border: 2px solid black;
-}
-
-#point {
-    background: black;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 36px;
-    color: white;
-    position: absolute;
-}
-
 #barre_bas {
     background: #f6f6f6;
     text-align: right;

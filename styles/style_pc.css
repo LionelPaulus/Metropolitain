@@ -3,29 +3,6 @@
     background-size: contain;
 }
 
-
-
-/*    ----- Header ------     */
-
-
-
-header {
-    display: block;
-    margin: 4px;
-    padding: 5px;
-    min-height: 90px;
-    width: 500px;
-    margin: auto;
-    border-radius: 7pt;
-    background: #ffeebb;
-    border: 3px solid #fce293;
-}
-
-header > img {
-    padding-left:50px;
-}
-
-
 /*    ----- Container ------     */
 
 
