@@ -461,7 +461,6 @@ url('fonts/FuturaStd-Medium.otf');
 #popup{
     width: 70%;
     max-width: 500px;
-    height: 80%;
     background-color: #F6F6F6;
     border: 5px solid #383838;
     border-radius: 40px;

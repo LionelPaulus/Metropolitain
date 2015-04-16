@@ -218,22 +218,29 @@ function chrono() {
 
 function eventsHappening() {
     if (event_stations[station - 2] > 0) {
-        console.log("event_stations[" + (station - 2) + "]>0");
         events(event_stations[station - 2]);
     }
 }
 
 function events(which_ID) {
-    console.log("STAAAART " + which_ID);
     var old_station = station;
     if(which_ID > 0){
         
         var positive_issue = true;
         
         if (which_ID == 1) { // Controleur
-            if (user_data["score"] < Math.floor((station - 2) / 2)) {
+            var controleur_tickets = Math.floor((station - 2) / 2);
+            if (user_data["score"] < controleur_tickets) {
                 station = 1;
                 positive_issue = false;
+                if(controleur_tickets == 1){
+                    var controleur_phrase = " " + controleur_tickets + " ticket était nécessaire pour cette zone.";
+                }else{
+                    var controleur_phrase = " " + controleur_tickets + " tickets étaient nécessaires pour cette zone.";
+                }
+            }else{
+                user_cookies("score", user_date["score"] - controleur_tickets);
+                var controleur_phrase = " Vous avez payé " + controleur_tickets + " tickets pour cette zone.";
             }
         } else if (which_ID == 2) { // Musicienne
             user_cookies("score", Math.floor(user_data["score"] - 1));
@@ -250,14 +257,22 @@ function events(which_ID) {
             $.getJSON("http://metropolitain.tk/json/events.json", function (json) {
                 if(positive_issue == true){
                     $('#popup_title').html(json.events[which_ID - 1].title.positive);
-                    $('#popup_description').html(json.events[which_ID - 1].description.positive);
+                    if(controleur_phrase != null){
+                        $('#popup_description').html(json.events[which_ID - 1].description.positive + controleur_phrase);
+                    }else{
+                        $('#popup_description').html(json.events[which_ID - 1].description.positive);   
+                    }
                     $('#popup_image').attr('src', 'imgs/'+json.events[which_ID - 1].image.positive);
                 }else{
                     $('#popup_title').html(json.events[which_ID - 1].title.negative);
-                    $('#popup_description').html(json.events[which_ID - 1].description.negative);
+                    if(controleur_phrase != null){
+                        $('#popup_description').html(json.events[which_ID - 1].description.negative + controleur_phrase);
+                    }else{
+                        $('#popup_description').html(json.events[which_ID - 1].description.negative);   
+                    }
                     $('#popup_image').attr('src', 'imgs/'+json.events[which_ID - 1].image.negative);
                 }
-                $('popup').show();
+                $('#popup').fadeIn();
             });
         });
     }
@@ -336,6 +351,6 @@ function verifLevel(level){
     }
 }
 
-function hidePopup(){
-     $("#popup2").fadeOut("fast");
+function hidePopup(name){
+     $("#"+name).fadeOut("fast");
 }
