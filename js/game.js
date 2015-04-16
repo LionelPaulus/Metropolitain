@@ -202,7 +202,7 @@ function events(which_ID) {
                 if (controleur_tickets == 1) {
                     var controleur_phrase = " Vous avez payé " + controleur_tickets + " ticket pour cette zone.";
                 } else {
-                    var controleur_phrase = " Vous avez payés " + controleur_tickets + " tickets pour cette zone.";
+                    var controleur_phrase = " Vous avez payé " + controleur_tickets + " tickets pour cette zone.";
                 }
             }
         } else if (which_ID == 2) { // Musicienne
@@ -258,7 +258,7 @@ function event_handler() {
     }
 
     // How many times the event must come
-    var event_passages = [2, 1, 1, 1];
+    var event_passages = [2, 1, 1, 1, 1];
 
     for (var bm = 1; bm < event_passages.length + 1; bm++) {
         // bm = valeure à mettre dans le tableau (ID de l'event)
