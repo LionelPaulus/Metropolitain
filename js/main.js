@@ -5,7 +5,7 @@ var step = 0; // Number of the question
 var station = 1;
 var correct = null; // Correct answer of the question
 var user_data = [];
-var duree = 6;
+var duree = 21;
 var duree_totale = duree;
 var station_from;
 var station_to;
@@ -15,6 +15,7 @@ var tickets_to_end = 0; // Number of tickets needed to complete the level
 var num_stations = 0; // Total
 var num_questions = 0; // Total
 var event_stations = [];
+var answered = false;
 
 
 // General cookies settings
@@ -106,21 +107,31 @@ function get_question(user_response) { // Find a question in the JSON file
             });
         });
     } else {
-        if (user_response == correct) {
-            console.log("correct");
+        if(answered == false){        
+            answered = true;
+            $('#rep'+(correct+1)).addClass('greenq');
+            if (user_response == correct) {
+                // Score update
+                user_cookies("score", (user_data["score"] + 1));
+                $('#score').html( user_data["score"]);
 
-            // Score update
-            user_cookies("score", (user_data["score"] + 1));
-            $('#score').html( user_data["score"]);
-
-            // Score progression update
-            if((user_data["score"] * 100 / tickets_to_end) <= 100){
-                user_cookies("actual_progression", (user_data["score"] * 100 / tickets_to_end));
+                // Score progression update
+                if((user_data["score"] * 100 / tickets_to_end) <= 100){
+                    user_cookies("actual_progression", (user_data["score"] * 100 / tickets_to_end));
+                }
+            }else{
+                $('#rep'+(user_response+1)).addClass('redq');
+                var bad_answer = true;
             }
-        } else {
-            console.log("faux");
+            setTimeout(function(){
+                get_question();
+                $('#rep'+(correct+1)).removeClass('greenq');
+                if(bad_answer == true){
+                    $('#rep'+(user_response+1)).removeClass('redq');
+                }
+                answered = false;
+            }, 2000);
         }
-        get_question();
     }
 }
 get_question();

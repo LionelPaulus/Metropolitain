@@ -239,6 +239,17 @@ a{
     margin-top: 90px;
 }
 
+.button.greenq {
+    background-color: #0f9d58;
+    color: #fff;
+}
+
+
+.button.redq {
+    background-color: #F34235;
+    color: #fff;
+}
+
 .button.transition p {
     padding-top: 12px;
 }
