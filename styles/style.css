@@ -313,6 +313,7 @@ a {
 #score {
     position: absolute;
     right: 5%;
+    margin-top: -20px;
 }
 
 .answers {
