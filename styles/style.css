@@ -545,3 +545,10 @@ a {
     position: absolute;
     width: 40px;
 }
+
+.tickets {
+    width:43px;
+    position:absolute;
+    right:10%;
+    top:1%;
+}
