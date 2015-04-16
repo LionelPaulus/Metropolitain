@@ -112,23 +112,20 @@ function update_stations() {
 }
 update_stations(); // First required update_stations
 
-
+$(window).load(function () {
 var timerCh;
 setTimeout(function () {
     timerCh = setInterval(function () {
         chrono();
     }, 1000);
 }, 500);
-
+});
 
 function chrono() {
 
     $(window).load(function () {
         $("#transition").hide();
-    });
-
-    
-    
+    });    
     
     if (duree <= 1) {
         clearInterval(timerCh);

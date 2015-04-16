@@ -32,6 +32,8 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
         user_data["lines_finished"] = 0;
         Cookies.set('actual_station', 0);
         user_data["actual_station"] = 0;
+        Cookies.set('no_sound', false);
+        user_data["no_sound"] = false;
     } else {
         user_data["score"] = parseInt(Cookies.get('score'));
         user_data["actual_line"] = parseInt(Cookies.get('actual_line'));
@@ -39,6 +41,7 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
         user_data["line_progression"] = parseInt(Cookies.get('line_progression'));
         user_data["lines_finished"] = Cookies.get('lines_finished');
         user_data["actual_station"] = Cookies.get('actual_station');
+        user_data["no_sound"] = Cookies.get('no_sound');
     }
     $('#score').html(user_data["score"]);
 }
