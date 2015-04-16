@@ -130,7 +130,7 @@ function get_question(user_response) { // Find a question in the JSON file
                     $('#rep'+(user_response+1)).removeClass('redq');
                 }
                 answered = false;
-            }, 2000);
+            }, 1500);
         }
     }
 }
