@@ -60,7 +60,6 @@ function get_question(user_response) { // Find a question in the JSON file
 
                 // Question save in cookies
                 user_cookies("actual_station", parseInt(step));
-                console.log(user_data["actual_station"]);
             });
         });
     } else {
@@ -149,7 +148,7 @@ function chrono() {
         eventsHappening();
     } else {
         duree--;
-        if (duree == 3) {
+        if (duree == 2) {
             play_sound("alarme");
         }
     }
