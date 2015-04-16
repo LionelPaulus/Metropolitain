@@ -63,6 +63,7 @@ function get_question(user_response) { // Find a question in the JSON file
                 
                 // Question save in cookies
                 user_cookies("actual_station", step);
+                console.log(user_data["actual_station"]);
             });
         });
     } else {
