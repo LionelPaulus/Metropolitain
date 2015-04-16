@@ -255,8 +255,9 @@ function events(which_ID) {
                 }else{
                     $('#popup_title').html(json.events[which_ID - 1].title.negative);
                     $('#popup_description').html(json.events[which_ID - 1].description.negative);
-                    $('#popup_image').attr('src', 'imgs/'+json.events[which_ID - 1].image.positive);
+                    $('#popup_image').attr('src', 'imgs/'+json.events[which_ID - 1].image.negative);
                 }
+                $('popup').show();
             });
         });
     }
@@ -317,6 +318,7 @@ function event_handler() {
             }
         }
     }
+    console.log(event_stations);
 }
 
 
