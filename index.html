@@ -33,7 +33,7 @@
         </div>
     </a>
 
-    <a href="#?custom=true&width=108%&height=100%" rel="prettyPhoto">
+    <a href="#?custom=true&width=108%&height=100%" id="rule-pop" rel="prettyPhoto">
         <div class="button raised grey transition" style="margin-top:60px;">
             <p>RÈGLES</p>
             <paper-ripple fit></paper-ripple>
@@ -69,7 +69,7 @@
             custom_markup: '<div style="text-align:center;font-size:16px;font-family:helvetica;padding-top:10px;">INFO</div><br>La Webapp Metroplolitain est desormais disponible sur tous vos navigateurs, aussi bien pour smartphone et tablette que sur ordinateur.<br><br>Metropolitain est un jeux ludique axé sur le metro Parisien, très prenant il saura remplir vos moments d’ennui et vous ne pourrez plus vous en passer.<br><br>Réalisé à HETIC - P2019',
         });
         
-        if(mobileAndTabletcheck)==false{
+        if(mobileAndTabletcheck==false){
             $("#rule-pop").attr("href","#?custom=true&width=138%&height=100%");
         }
        
