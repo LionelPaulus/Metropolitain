@@ -353,6 +353,13 @@ position: absolute;
     display: table;
 }
 
+#transition{
+    width:200px;
+    height:200px;
+    background-color:green;
+    z-index:99;
+}
+
 
 /*    ------ Autres ------     */
 

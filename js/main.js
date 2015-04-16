@@ -48,13 +48,13 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
         user_data["actual_progression"] = parseInt(Cookies.get('actual_progression'));
         user_data["lines_finished"] = Cookies.get('lines_finished');
     }
-    $('#score').html( user_data["score"]);
+    $('#score').html(user_data["score"]);
 }
 user_cookies(); // Get user data with cookies
 
 function reset_score() { /////// DEBUG ONLY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     user_cookies("score", 0);
-    $('#score').html( user_data["score"]);
+    $('#score').html(user_data["score"]);
 }
 
 function get_question(user_response) { // Find a question in the JSON file
@@ -111,7 +111,7 @@ function get_question(user_response) { // Find a question in the JSON file
 
             // Score update
             user_cookies("score", (user_data["score"] + 1));
-            $('#score').html( user_data["score"]);
+            $('#score').html(user_data["score"]);
 
             // Progression update
             if((user_data["score"] * 100 / tickets_to_end) <= 100){
@@ -148,42 +148,28 @@ timerCh = setInterval(function () {
 }, 1000);
 
 function chrono() {
-    
-   $(window).load(function(){
-  $("#transition").hide();
-   //$("#button2").hide();
-});
-    
+
+    $(window).load(function () {
+        $("#transition").hide();
+
+    });
+
     if (duree <= 0) {
         clearInterval(timerCh);
-        
-        
-    $("#transition").show();
-    //$("#button2").show();
-    
 
-        
-        
-        $("#button").click(function (){
+        $("#transition").show();
 
-    $("#transition").hide();
-    //$("#button2").hide();
-            
-            //$("#button2").click(function (){
+        $("#button").click(function () {
+            $("#transition").hide();
 
-    //$("#button2").hide();
-    
+        });
 
-});
-        // resetChrono();
         station++;
         update_stations();
         eventsHappening();
-        // get_question();
-    //});
-    }
-                           
-    else {
+
+
+    } else {
         duree--;
     }
 
