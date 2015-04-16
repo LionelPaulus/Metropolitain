@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <title>Metropolitain</title>
@@ -8,16 +9,16 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,400' rel='stylesheet' type='text/css'>
     <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
-    
+
 </head>
 
 <body class="bg">
-   
-   <!--Loader -->
+
+    <!--Loader -->
 
     <div class="load"></div>
     <i class="loader"></i>
-    
+
     <!-- Container -->
 
     <div id="barre">
@@ -48,16 +49,31 @@
     <div id="barre_bas">
         <img src="http://cdn.flaticon.com/png/256/10033.png" style="width:30px;float:left;padding-left:12px;padding-bottom:10px;">
         <img src="http://cdn.flaticon.com/png/256/69407.png" style="width:30px;float:left;">
-        <img src="imgs/Volume.png" onclick="stop_sounds();" id="sound"/>
+        <img src="imgs/Volume.png" onclick="stop_sounds();" id="sound" />
     </div>
+    
+    <!-- Pop-up des règles et infos du quizz -->
+    
     <div id="popup_regles" class="popup" onclick="hidePopup('popup_regles');">
         <h1>RÈGLES DU JEU</h1>
-        <p>Une bonne réponse à une question vous permet de gagner un ticket.<br>Si vous n’avez pas le nombre de tickets nécessaire et que le contrôleur passe, vous retournez au début de la ligne.<br>Lorsqu’un musicien entre dans la rame, vous lui donnez un ticket de métro.<br>Des pickpockets peuvent survenir et vous voler vos tickets de métro.<br>Lorsque survient une grève, ou un accident de voyageur vous retournez deux stations en arrière.<br>Une fois arrivé au terminus avec 30 tickets, vous débloquez la ligne suivante.</p>
+        <p>Une bonne réponse à une question vous permet de gagner un ticket.
+            <br>Si vous n’avez pas le nombre de tickets nécessaire et que le contrôleur passe, vous retournez au début de la ligne.
+            <br>Lorsqu’un musicien entre dans la rame, vous lui donnez un ticket de métro.
+            <br>Des pickpockets peuvent survenir et vous voler vos tickets de métro.
+            <br>Lorsque survient une grève, ou un accident de voyageur vous retournez deux stations en arrière.
+            <br>Une fois arrivé au terminus avec 30 tickets, vous débloquez la ligne suivante.</p>
     </div>
     <div id="popup_info" class="popup" onclick="hidePopup('popup_info');">
         <h1>INFO</h1>
-        <p>La Webapp Metroplolitain est desormais disponible sur tous vos navigateurs, aussi bien pour smartphone et tablette que sur ordinateur.<br><br>Metropolitain est un jeux ludique axé sur le metro Parisien, très prenant il saura remplir vos moments d’ennui et vous ne pourrez plus vous en passer.<br><br>Réalisé à HETIC - Par Amine Allali, Jasmine Ferhaoui, Luca Haenel, Lionel Paulus, Léo Sadoune, Lucie Zevacco- P2019</p>
+        <p>La Webapp Metroplolitain est desormais disponible sur tous vos navigateurs, aussi bien pour smartphone et tablette que sur ordinateur.
+            <br>
+            <br>Metropolitain est un jeux ludique axé sur le metro Parisien, très prenant il saura remplir vos moments d’ennui et vous ne pourrez plus vous en passer.
+            <br>
+            <br>Réalisé à HETIC - Par Amine Allali, Jasmine Ferhaoui, Luca Haenel, Lionel Paulus, Léo Sadoune, Lucie Zevacco- P2019</p>
     </div>
+    
+    <!--Son d'intro -->
+    
     <audio id="intro" visibility="hidden">
         <source src="sound/intro.mp3" type="audio/mp3" />
     </audio>
@@ -70,9 +86,10 @@
 <script type="text/javascript">
     $(document).ready(function () {
         play_sound('intro');
-        if(!mobileAndTabletcheck()&&(self.location.href.split('pc').length == 1)&&(window==window.top)){
-            window.location.href="pc/";
+        if (!mobileAndTabletcheck() && (self.location.href.split('pc').length == 1) && (window == window.top)) {
+            window.location.href = "pc/";
         }
     });
 </script>
+
 </html>
