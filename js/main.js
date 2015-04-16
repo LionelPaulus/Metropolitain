@@ -56,7 +56,7 @@ function stop_sounds() { // Pause every sound
         $('#sound').attr('src','imgs/VolumeMute.png');
     } else {
         no_sound = false;
-        $('#sound').attr('src','imgs/Volume.svg');
+        $('#sound').attr('src','imgs/Volume.png');
     }
 }
 
