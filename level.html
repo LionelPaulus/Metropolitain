@@ -23,18 +23,15 @@
         
         <p id="count-l">1/14</p>
         
-        
         <div id="popup2">
-            <img class="echap" src="imgs/Cross.png" />
+            <img class="echap" onclick="hidePopup();" src="imgs/Cross.png" />
             <p>Vous devez disposer de 30 <img class="ticket" src="imgs/ticket1.png" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pour pouvoir débloquer une autre ligne.</p>
             
             <div class="button raised green transition" style="margin-top:10px;"><h1>DÉVÉROUILLER</h1>
       <paper-ripple fit></paper-ripple>
     </div>
         </div>
-        
-        
-        <div class="button raised" id="ligne1" onclick="window.location.href='game.html'">
+        <div class="button raised" id="ligne1" onclick="verifLevel(1)">
       <span class="metro ligne1">Ligne 1</span>
             <p id="terminus">Château de Vincennes<br>
 La Défense</p>
@@ -43,7 +40,7 @@ La Défense</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne2">
+        <div class="button raised grey" id="ligne2" onclick="verifLevel(2)";>
       <span class="metro ligne2">Ligne 2</span>
             <p id="terminus">Porte Dauphine<br>
  Nation</p>
@@ -51,7 +48,7 @@ La Défense</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne3">
+        <div class="button raised grey" id="ligne3" onclick="verifLevel(3)";>
       <span class="metro ligne3">Ligne 3</span>
             <p id="terminus">Pont de Levallois - Bécon<br>
 Gallieni</p>
@@ -59,7 +56,7 @@ Gallieni</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne4">
+        <div class="button raised grey" id="ligne4" onclick="verifLevel(4)";>
       <span class="metro ligne4">Ligne 4</span>
             <p id="terminus">Porte de Clignancourt<br>
 Maire de Montrouge</p>
@@ -67,7 +64,7 @@ Maire de Montrouge</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne5">
+        <div class="button raised grey" id="ligne5" onclick="verifLevel(5)";>
       <span class="metro ligne5">Ligne 5</span>
             <p id="terminus">Bobigny Pablo Picasso<br>
 Place d’Italie</p>
@@ -75,7 +72,7 @@ Place d’Italie</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne6">
+        <div class="button raised grey" id="ligne6" onclick="verifLevel(6)";>
       <span class="metro ligne6">Ligne 6</span>
             <p id="terminus">Charles de Gaulle - Étoile <br>
 Nation</p>
@@ -83,7 +80,7 @@ Nation</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne7">
+        <div class="button raised grey" id="ligne7" onclick="verifLevel(7)";>
       <span class="metro ligne7">Ligne 7</span>
             <p id="terminus">La Courneuve 8 Mai 1945<br>
  Mairie d’Ivry et Villejuif</p>
@@ -91,7 +88,7 @@ Nation</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne8">
+        <div class="button raised grey" id="ligne8" onclick="verifLevel(8)";>
       <span class="metro ligne8">Ligne 8</span>
             <p id="terminus">Balard<br>
 Créteuil-Préfecture</p>
@@ -99,7 +96,7 @@ Créteuil-Préfecture</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne9">
+        <div class="button raised grey" id="ligne9" onclick="verifLevel(9)";>
       <span class="metro ligne9">Ligne 9</span>
             <p id="terminus">Pont de Sèvres<br>
 Mairie de Montreuil</p>
@@ -107,7 +104,7 @@ Mairie de Montreuil</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne10">
+        <div class="button raised grey" id="ligne10" onclick="verifLevel(10)";>
       <span class="metro ligne10">Ligne 10</span>
             <p id="terminus">Boulogne Pont de St Cloud <br>
 Gare d’Austerlitz</p>
@@ -115,7 +112,7 @@ Gare d’Austerlitz</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne11">
+        <div class="button raised grey" id="ligne11" onclick="verifLevel(11)";>
       <span class="metro ligne11">Ligne 11</span>
             <p id="terminus">Châtelet<br>
 Mairie des Lilas</p>
@@ -123,7 +120,7 @@ Mairie des Lilas</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne12">
+        <div class="button raised grey" id="ligne12" onclick="verifLevel(12)";>
       <span class="metro ligne12">Ligne 12</span>
             <p id="terminus">Aubervilliers<br>
 Mairie d’Issy</p>
@@ -131,7 +128,7 @@ Mairie d’Issy</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne13">
+        <div class="button raised grey" id="ligne13" onclick="verifLevel(13)";>
       <span class="metro ligne13">Ligne 13</span>
             <p id="terminus">Saint-Denis et Gabriel Péri <br>
 Châtillon-Montrouge</p>
@@ -139,7 +136,7 @@ Châtillon-Montrouge</p>
       <paper-ripple fit></paper-ripple>
     </div>
         
-        <div class="button raised grey" id="ligne14">
+        <div class="button raised grey" id="ligne14" onclick="verifLevel(14)";>
       <span class="metro ligne14">Ligne 14</span>
             <p id="terminus">Saint-Lazare<br>
  Olympiades</p>
@@ -155,6 +152,16 @@ Châtillon-Montrouge</p>
 $(window).load(function (){
     $('#progress').css('width',user_data["actual_progression"] + "%");
 });
+    
+    $(window).load(function () {
+    $("#popup2").hide();
+    });
+    
+    /* $(".echap").onclick(function () {
+     $("#popup2").fadeOut("fast");
+        });
+    */
+    
 </script>
 </html>
 

@@ -29,6 +29,8 @@ $(window).load(function () {
     $(".loader").fadeOut("slow");
 });
 
+
+
 // Functions
 function user_cookies(name, value) { // Get and update score, station, tickets, line with cookies    
     if ((name != null) && (value != null)) {
@@ -175,6 +177,9 @@ function chrono() {
         $("#button").click(function () {
     $("#transition").fadeOut("fast");
             update_stations();
+        $("button2").click(function () {
+            window.location.href='game.html';
+        });
 
         });
 
@@ -282,4 +287,23 @@ function event_handler() {
             }
         }
     }
+}
+
+
+
+function verifLevel(level){
+
+    
+    if (user_data["score"]<((level*50)-50)) {
+        $("#popup2").fadeIn("fast");
+
+}
+    
+    else if (user_data["score"]>=((level*50)-50)){
+        window.location.href='game.html';
+    }
+}
+
+function hidePopup(){
+     $("#popup2").fadeOut("fast");
 }
