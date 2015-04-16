@@ -1,60 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
     <title>Metropolitain</title>
     <link href="styles/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="popup/css/prettyPhoto.css"> 
+    <link rel="stylesheet" href="popup/css/prettyPhoto.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,400' rel='stylesheet' type='text/css'>
     <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
 </head>
 
 <body class="bg">
- 
-  <div class="load"></div>
-<i class="loader"></i>
    
+   <!--Loader -->
+
+    <div class="load"></div>
+    <i class="loader"></i>
+    
+    <!-- Container -->
+
     <div id="barre">
-    METROPOLITAIN
+        METROPOLITAIN
     </div>
-    
-    <a href="level.html"><div class="button raised green transition big"><p>PLAY</p>
-      <paper-ripple fit></paper-ripple>
-    </div></a>
-    
-    <a href="#?custom=true&width=108%&height=100%" rel="prettyPhoto"><div class="button raised grey transition" style="margin-top:60px;"><p>RULES</p>
-      <paper-ripple fit></paper-ripple>
-    </div></a>
-    
-    <a href="#?custom=true&width=108%&height=100%" rel="prettyPhoto2"><div class="button raised grey transition" style="margin-top:30px;"><p>INFO</p>
-      <paper-ripple fit></paper-ripple>
-    </div></a>
-    
+
+    <a href="level.html">
+        <div class="button raised green transition big">
+            <p>PLAY</p>
+            <paper-ripple fit></paper-ripple>
+        </div>
+    </a>
+
+    <a href="#?custom=true&width=108%&height=100%" rel="prettyPhoto">
+        <div class="button raised grey transition" style="margin-top:60px;">
+            <p>RULES</p>
+            <paper-ripple fit></paper-ripple>
+        </div>
+    </a>
+
+    <a href="#?custom=true&width=108%&height=100%" rel="prettyPhoto2">
+        <div class="button raised grey transition" style="margin-top:30px;">
+            <p>INFO</p>
+            <paper-ripple fit></paper-ripple>
+        </div>
+    </a>
+
     <div id="barre_bas">
-    <img src="imgs/Volume.svg">
+        <img src="imgs/Volume.svg">
     </div>
+    
 </body>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/js.cookie.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script src="popup/js/jquery.js"></script>    
-        <script src="popup/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("a[rel^='prettyPhoto']").prettyPhoto({
-                    custom_markup: '<div style="text-align:center;font-size:16px;font-family:helvetica;padding-top:10px;">RÈGLES DU JEU</div><br>-Une bonne réponse à une question vous permet de gagner un ticket.<br><br>-Si vous n’avez pas le nombre de tickets nécessaire et que le contrôleur passe, vous retournez au début de la ligne. Lorsqu’un musicien entre dans la rame, vous lui donnez un ticket de métro. Des pickpockets peuvent survenir et vous voler vos tickets de métro. Lorsque survient une grève, ou un accident de voyageur vous retournez deux stations en arrière. Une fois arrivé au terminus avec 30 tickets, vous débloquez la ligne suivante.',
-                });
-            });
-        </script>
-        
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("a[rel^='prettyPhoto2']").prettyPhoto({
-                    custom_markup: '<div style="text-align:center;font-size:16px;font-family:helvetica;padding-top:10px;">INFO</div><br>La Webapp Metroplolitain est desormais disponible sur tous vos navigateurs, aussi bien pour smartphone et tablette que sur ordinateur.<br><br>Metropolitain est un jeux ludique axé sur le metro Parisien, très prenant il saura remplir vos moments d’ennui et vous ne pourrez plus vous en passer.<br><br>Réalisé à HETIC - P2019',
-                });
-            });
-        </script>
+<script src="popup/js/jquery.js"></script>
+<script src="popup/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("a[rel^='prettyPhoto']").prettyPhoto({
+            custom_markup: '<div style="text-align:center;font-size:16px;font-family:helvetica;padding-top:10px;">RÈGLES DU JEU</div><br>-Une bonne réponse à une question vous permet de gagner un ticket.<br><br>-Si vous n’avez pas le nombre de tickets nécessaire et que le contrôleur passe, vous retournez au début de la ligne. Lorsqu’un musicien entre dans la rame, vous lui donnez un ticket de métro. Des pickpockets peuvent survenir et vous voler vos tickets de métro. Lorsque survient une grève, ou un accident de voyageur vous retournez deux stations en arrière. Une fois arrivé au terminus avec 30 tickets, vous débloquez la ligne suivante.',
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("a[rel^='prettyPhoto2']").prettyPhoto({
+            custom_markup: '<div style="text-align:center;font-size:16px;font-family:helvetica;padding-top:10px;">INFO</div><br>La Webapp Metroplolitain est desormais disponible sur tous vos navigateurs, aussi bien pour smartphone et tablette que sur ordinateur.<br><br>Metropolitain est un jeux ludique axé sur le metro Parisien, très prenant il saura remplir vos moments d’ennui et vous ne pourrez plus vous en passer.<br><br>Réalisé à HETIC - P2019',
+        });
+    });
+</script>
 
 </html>

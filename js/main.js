@@ -29,6 +29,8 @@ $(window).load(function () {
     $(".loader").fadeOut("slow");
 });
 
+
+
 // Functions
 window.mobileAndTabletcheck = function() {
   var check = false;
@@ -170,7 +172,7 @@ timerCh = setInterval(function () {
 function chrono() {
     
    $(window).load(function(){
-  $("#transition").fadeOut("fast");
+  $("#transition").hide();
 });
     
     if (duree <= 0) {
@@ -178,13 +180,19 @@ function chrono() {
         
         
     $("#transition").fadeIn("fast");
+        
         $("#button").click(function () {
     $("#transition").fadeOut("fast");
             update_stations();
+            get_question();
+        $("button2").click(function () {
+            window.location.href='game.html';
+        });
 
         });
 
         station++;
+        
         eventsHappening();
 
 
@@ -200,10 +208,10 @@ function chrono() {
         });
     });
     $('#temps').html(duree+"'");
-
+// possible +1 ??? 
     if (station == num_stations) {
         clearInterval(timerCh);
-        // End of the level
+       $("#popup_win").fadeIn("fast");
     }
 }
 
@@ -309,4 +317,23 @@ function event_handler() {
             }
         }
     }
+}
+
+
+
+function verifLevel(level){
+
+    
+    if (user_data["score"]<((level*50)-50)) {
+        $("#popup2").fadeIn("fast");
+
+}
+    
+    else if (user_data["score"]>=((level*50)-50)){
+        window.location.href='game.html';
+    }
+}
+
+function hidePopup(){
+     $("#popup2").fadeOut("fast");
 }
