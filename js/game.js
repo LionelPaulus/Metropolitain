@@ -112,8 +112,8 @@ function update_stations() {
 }
 update_stations(); // First required update_stations
 
+var timerCh;
 $(window).load(function () {
-    var timerCh;
     setTimeout(function () {
         timerCh = setInterval(function () {
             chrono();
@@ -125,53 +125,50 @@ function chrono() {
 
     $(window).load(function () {
         $("#transition").hide();
+    });
 
-        if (duree <= 1) {
-            clearInterval(timerCh);
+    if (duree <= 1) {
+        clearInterval(timerCh);
 
+        $("#transition").fadeIn("fast");
 
-            $("#transition").fadeIn("fast");
-
-            $("#button").click(function () {
-                $("#transition").fadeOut("fast");
-                update_stations();
-                get_question();
-                $("button2").click(function () {
-                    window.location.href = 'game.html';
-                });
-
-            });
-
-            station++;
-
-            // Line_progression update
-            user_cookies("line_progression", station);
-
-            eventsHappening();
-
-        } else {
-            duree--;
-            if (duree == 3) {
-                play_sound("alarme");
-            }
-        }
-
-        // Radial progress bar update
-        var radial_progress_bar = (duree / (duree_totale - 1));
-        $(document).ready(function () {
-            $('#circle').circleProgress({
-                value: radial_progress_bar
+        $("#button").click(function () {
+            $("#transition").fadeOut("fast");
+            update_stations();
+            get_question();
+            $("button2").click(function () {
+                window.location.href = 'game.html';
             });
         });
-        $('#temps').html(duree + "'");
-        // possible +1 ??? 
-        if (station == num_stations) {
-            clearInterval(timerCh);
-            $("#popup_win").fadeIn("fast");
-            // Stations progression 100%
-            $('#progress').css('width', "100%");
+
+        station++;
+
+        // Line_progression update
+        user_cookies("line_progression", station);
+
+        eventsHappening();
+    } else {
+        duree--;
+        if (duree == 3) {
+            play_sound("alarme");
         }
+    }
+
+    // Radial progress bar update
+    var radial_progress_bar = (duree / (duree_totale - 1));
+    $(document).ready(function () {
+        $('#circle').circleProgress({
+            value: radial_progress_bar
+        });
     });
+    $('#temps').html(duree + "'");
+    
+    if (station == num_stations) {
+        clearInterval(timerCh);
+        $("#popup_win").fadeIn("fast");
+        // Stations progression 100%
+        $('#progress').css('width', "100%");
+    }
 }
 
 
