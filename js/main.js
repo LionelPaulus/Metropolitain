@@ -5,7 +5,7 @@ var step = 0; // Number of the question
 var station = 1;
 var correct = null; // Correct answer of the question
 var user_data = [];
-var duree = 2;
+var duree = 21;
 var duree_totale = duree;
 var station_from;
 var station_to;
