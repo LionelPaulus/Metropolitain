@@ -168,6 +168,7 @@ function chrono() {
         $("#popup_win").fadeIn("fast");
         // Reset
         user_cookies("line_progression",1);
+        station = 1;
         
         // Stations progression 100%
         $('#progress').css('width', "100%");
