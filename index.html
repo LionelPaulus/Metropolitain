@@ -72,10 +72,9 @@
             custom_markup: '<div style="text-align:center;font-size:16px;font-family:helvetica;padding-top:10px;">INFO</div><br>La Webapp Metroplolitain est desormais disponible sur tous vos navigateurs, aussi bien pour smartphone et tablette que sur ordinateur.<br><br>Metropolitain est un jeux ludique axé sur le metro Parisien, très prenant il saura remplir vos moments d’ennui et vous ne pourrez plus vous en passer.<br><br>Réalisé à HETIC - P2019',
         });
         
-        if(mobileAndTabletcheck==false){
+        if(mobileAndTabletcheck()){
             $("#rule-pop").attr("href","#?custom=true&width=138%&height=100%");
         }
-       
     });
 </script>
 
