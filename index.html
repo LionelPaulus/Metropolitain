@@ -74,7 +74,7 @@
         
         if(mobileAndTabletcheck()){
             $("#rule-pop").attr("href","#?custom=true&width=138%&height=100%");
-        }else if(self.location.href.split('pc').length == 1){
+        }else if((self.location.href.split('pc').length == 1)&&(window==window.top)){
             window.location.href="pc/";
         }
     });
