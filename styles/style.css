@@ -203,6 +203,15 @@ a{
     display: block;
 }
 
+.button.transition.big {
+    max-width: 245px;
+    height: 65px;
+}
+
+.button.transition.big p {
+    padding-top: 19px;
+}
+
 .button.questionnaire {
     font-family: Arial;
     width: 93%;
