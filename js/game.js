@@ -60,6 +60,9 @@ function get_question(user_response) { // Find a question in the JSON file
 
                 // Next question
                 step += 1;
+                
+                // Question save in cookies
+                user_cookies("actual_station", step);
             });
         });
     } else {
@@ -146,9 +149,6 @@ function chrono() {
         });
 
         station++;
-        
-        // Station save in cookies
-        user_cookies("actual_station", station);
         
         // Line_progression update
         user_cookies("line_progression", station);
