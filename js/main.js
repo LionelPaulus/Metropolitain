@@ -19,7 +19,7 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
     if ((name != null) && (value != null)) {
         Cookies.set(name, value);
         user_data[name] = value;
-    } else if (Cookies.get('score') == undefined) {
+    } else if (Cookies.get('no_sound') == undefined) {
         Cookies.set('score', 0);
         user_data["score"] = 0;
         Cookies.set('actual_line', 0);
