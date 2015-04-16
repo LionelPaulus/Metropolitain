@@ -418,7 +418,7 @@ a {
     max-width: 500px;
     background-color: #F6F6F6;
     border: 5px solid #383838;
-    border-radius: 40px;
+    border-radius: 9px;
     top: 17%;
     position: absolute;
     z-index: 20;
