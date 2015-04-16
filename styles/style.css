@@ -203,6 +203,15 @@ a{
     display: block;
 }
 
+.button.transition.big {
+    max-width: 245px;
+    height: 65px;
+}
+
+.button.transition.big p {
+    padding-top: 19px;
+}
+
 .button.questionnaire {
     font-family: Arial;
     width: 93%;
@@ -361,7 +370,7 @@ a{
     bottom: 0;
     background: white;
     position: absolute;
-    top: 201px;
+    top: 253px;
     margin: auto;
     background-image: url(../imgs/Background.jpg);
     background-size: contain;
@@ -406,7 +415,7 @@ a{
 }
 
 .loader:after {
-    border: .5em solid #6cf;
+    border: .5em solid #0f9d58;
     border-radius: 50%;
     bottom: .9em;
     content: '';
