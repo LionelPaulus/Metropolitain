@@ -40,7 +40,8 @@ user_cookies(); // Get user data with cookies
 
 function play_sound(sound_name) {
     if (no_sound == false) {
-        $("#" + sound_name).trigger('play'); // ID of the sound
+        //$("#" + sound_name).trigger('play'); // ID of the sound
+        $("#" + sound_name).play();
     }
 }
 
