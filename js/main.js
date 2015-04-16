@@ -47,7 +47,7 @@ function play_sound(sound_name) {
     }
 }
 
-function stop_souds() { // Pause every sound
+function stop_sounds() { // Pause every sound
     /// MUST ADD CLASS "media" TO EVERY SOUND
     console.log("detecté");
     if (no_sound == false) {
