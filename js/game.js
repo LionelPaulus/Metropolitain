@@ -1,5 +1,6 @@
 // Settings
 var step = user_data["actual_station"]; // Number of the question
+console.log(step);
 var station = user_data["line_progression"];
 var correct = null; // Correct answer of the question
 var duree = 21;
