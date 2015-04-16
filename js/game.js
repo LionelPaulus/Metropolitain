@@ -197,7 +197,7 @@ function events(which_ID) {
             } else {
                 user_cookies("score", user_data["score"] - controleur_tickets);
                 if (controleur_tickets == 1) {
-                    var controleur_phrase = " Vous avez payé " + controleur_tickets + " ticket pour cette zone.
+                    var controleur_phrase = " Vous avez payé " + controleur_tickets + " ticket pour cette zone.";
                 } else {
                     var controleur_phrase = " Vous avez payés " + controleur_tickets + " tickets pour cette zone.";
                 }
