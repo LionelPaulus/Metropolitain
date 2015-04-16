@@ -35,7 +35,7 @@
             <img class="echap" onclick="hidePopup('popup2');" src="imgs/Cross.png" />
             <p>Vous devez disposer de 30 <img class="ticket" src="imgs/ticket1.png" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pour pouvoir débloquer une autre ligne.</p>
 
-            <div class="button raised green transition" style="margin-top:10px;">
+            <div class="button raised green transition" style="margin-top:10px;" id="unlock">
                 <h1>DÉVÉROUILLER</h1>
                 <paper-ripple fit></paper-ripple>
             </div>
@@ -173,16 +173,11 @@
 <script type="application/javascript">
     $(window).load(function () {
         $('#progress').css('width', user_data["actual_progression"] + "%");
-    });
-
-    $(window).load(function () {
         $("#popup2").hide();
+        if(user_data["score"] < 30){
+            $('#unlock').css('opacity', '0.3');
+        }
     });
-
-    /* $(".echap").onclick(function () {
-     $("#popup2").fadeOut("fast");
-        });
-    */
 </script>
 
 </html>

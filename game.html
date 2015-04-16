@@ -22,7 +22,7 @@
     <!-- Container -->
 
     <div id="barre_jeu">
-        <a href="level.html"><span class="metro ligne1" style="top:2%;left:4%;position:absolute;width:40px;">Ligne 1</span></a>
+        <a href="level.html"><span class="metro ligne1 game">Ligne 1</span></a>
         <span><img src="imgs/ticket1.png" style="width:43px;position:absolute;right:8%;top:1%;">
 <div id="score"></div></span> METROPOLITAIN
     </div>
@@ -46,14 +46,13 @@
     </div>
 
     <!-- Pop-up en cas de victoire -->
-
-    <div id="popup_win" onclick="hidePopup('popup');">
+    
+    <div id="popup_win" onclick="hidePopup('popup_win');">
         <img class="echap" src="imgs/Cross.png" />
-        <span><img src="imgs/ticket1.png" style="width:43px;position:absolute;right:8%;top:1%;">
-<div id="score"></div></span>
+        <img class="icon" src="imgs/controleurcontent.png" />
 
-        <h1>FÉLICITATIONS</h1>
-        <p>Vous avez parcouru l'ensemble de la ligne 1 du métro Parisien.</p>
+        <h1>Victoire</h1>
+        <p>Félicitations, tu as fait toute la ligne ! Débloques dès à présent la ligne suivante pour continuer.</p>
     </div>
     
     <!-- Quizz -->
@@ -78,7 +77,7 @@
     </div>
 
     <div id="barre_bas_jeu">
-        <img src="imgs/Volume.svg" id="sounds">
+        <img src="imgs/Volume.png" onclick="stop_sounds();" id="sound"/>
     </div>
 
     <!-- Transition -->

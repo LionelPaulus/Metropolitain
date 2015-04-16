@@ -1,5 +1,5 @@
 // Settings
-var step = 0; // Number of the question
+var step = parseInt(user_data["actual_station"]); // Number of the question
 var station = user_data["line_progression"];
 var correct = null; // Correct answer of the question
 var duree = 21;
@@ -16,10 +16,8 @@ var answered = false;
 function get_question(user_response) { // Find a question in the JSON file
     if ((step == num_questions) && (num_questions != 0)) {
         // No more question
-        window.alert("End of questions");
-
-        // Stop the chrono
-        clearInterval(timerCh);
+        step = 0;
+        user_cookies("actual_station", 0);
     } else if (user_response == null) {
         $(document).ready(function () {
             $.getJSON("http://metropolitain.tk/json/line_1.json", function (json) {
@@ -59,6 +57,10 @@ function get_question(user_response) { // Find a question in the JSON file
 
                 // Next question
                 step += 1;
+
+                // Question save in cookies
+                user_cookies("actual_station", parseInt(step));
+                console.log(user_data["actual_station"]);
             });
         });
     } else {
@@ -110,14 +112,14 @@ function update_stations() {
 }
 update_stations(); // First required update_stations
 
-
 var timerCh;
-setTimeout(function () {
-    timerCh = setInterval(function () {
-        chrono();
-    }, 1000);
-}, 500);
-
+$(window).load(function () {
+    setTimeout(function () {
+        timerCh = setInterval(function () {
+            chrono();
+        }, 1000);
+    }, 500);
+});
 
 function chrono() {
 
@@ -125,12 +127,8 @@ function chrono() {
         $("#transition").hide();
     });
 
-    
-    
-    
     if (duree <= 1) {
         clearInterval(timerCh);
-
 
         $("#transition").fadeIn("fast");
 
@@ -141,19 +139,17 @@ function chrono() {
             $("button2").click(function () {
                 window.location.href = 'game.html';
             });
-
         });
 
         station++;
-        
+
         // Line_progression update
         user_cookies("line_progression", station);
 
         eventsHappening();
-
     } else {
         duree--;
-        if(duree==3){
+        if (duree == 3) {
             play_sound("alarme");
         }
     }
@@ -166,10 +162,12 @@ function chrono() {
         });
     });
     $('#temps').html(duree + "'");
-    // possible +1 ??? 
+    
     if (station == num_stations) {
         clearInterval(timerCh);
         $("#popup_win").fadeIn("fast");
+        // Stations progression 100%
+        $('#progress').css('width', "100%");
     }
 }
 

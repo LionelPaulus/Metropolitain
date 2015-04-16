@@ -313,6 +313,7 @@ a {
 #score {
     position: absolute;
     right: 5%;
+    margin-top: -20px;
 }
 
 .answers {
@@ -449,7 +450,6 @@ a {
 
 #popup p {
     text-align: center;
-    font-family: "futura std";
     padding: 5px;
 }
 /*Popup dévérouillage lignes */
@@ -480,7 +480,6 @@ a {
 
 #popup2 p {
     text-align: center;
-    font-family: "futura std";
     position: relative;
     margin-top: 20%;
     padding: 10px;
@@ -490,9 +489,8 @@ a {
 
 #popup2 h1 {
     text-align: center;
-    font-family: "futura std";
-    font-size: 0.8em;
-    padding-top: 15px;
+    font-size: 0.7em;
+    padding-top: 18px;
 }
 
 #popup2 .ticket {
@@ -531,6 +529,12 @@ a {
 
 #popup_win p {
     text-align: center;
-    font-family: "futura std";
     padding: 5px;
+}
+
+.metro.ligne1.game {
+    top: 2.4%;
+    left: 4%;
+    position: absolute;
+    width: 40px;
 }
