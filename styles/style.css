@@ -415,7 +415,7 @@ a{
 }
 
 .loader:after {
-    border: .5em solid #6cf;
+    border: .5em solid #0f9d58;
     border-radius: 50%;
     bottom: .9em;
     content: '';
