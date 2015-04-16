@@ -1,5 +1,5 @@
 // Settings
-var step = 0; // Number of the question
+var step = user_data["actual_station"]; // Number of the question
 var station = user_data["line_progression"];
 var correct = null; // Correct answer of the question
 var duree = 21;
@@ -16,7 +16,8 @@ var answered = false;
 function get_question(user_response) { // Find a question in the JSON file
     if ((step == num_questions) && (num_questions != 0)) {
         // No more question
-        window.alert("End of questions");
+        step = 0;
+        user_cookies("actual_station", 0);
 
         // Stop the chrono
         clearInterval(timerCh);
@@ -145,6 +146,9 @@ function chrono() {
         });
 
         station++;
+        
+        // Station save in cookies
+        user_cookies("actual_station", station);
         
         // Line_progression update
         user_cookies("line_progression", station);

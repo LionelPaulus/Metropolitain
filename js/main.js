@@ -30,12 +30,15 @@ function user_cookies(name, value) { // Get and update score, station, tickets, 
         user_data["line_progression"] = 1;
         Cookies.set('lines_finished', 0); // Levels accomplished
         user_data["lines_finished"] = 0;
+        Cookies.set('actual_stations', 0);
+        user_data["actual_stations"] = 0;
     } else {
         user_data["score"] = parseInt(Cookies.get('score'));
         user_data["actual_line"] = parseInt(Cookies.get('actual_line'));
         user_data["actual_progression"] = parseInt(Cookies.get('actual_progression'));
         user_data["line_progression"] = parseInt(Cookies.get('line_progression'));
         user_data["lines_finished"] = Cookies.get('lines_finished');
+        user_data["actual_stations"] = Cookies.get('actual_stations');
     }
     $('#score').html(user_data["score"]);
 }
