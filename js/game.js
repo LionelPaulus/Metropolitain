@@ -1,6 +1,6 @@
 // Settings
 var step = 0; // Number of the question
-var station = 1;
+var station = user_data["line_progression"];
 var correct = null; // Correct answer of the question
 var duree = 21;
 var duree_totale = duree;
@@ -145,9 +145,11 @@ function chrono() {
         });
 
         station++;
+        
+        // Line_progression update
+        user_cookies("line_progression", station);
 
         eventsHappening();
-
 
     } else {
         duree--;
