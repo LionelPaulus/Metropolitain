@@ -33,8 +33,6 @@ a {
     z-index: 10000;
 }
 
-<<<<<<< HEAD
-=======
 #container {
     background: #e2e2e2;
     text-align: center;
@@ -61,7 +59,6 @@ a {
     position: absolute;
 }
 
->>>>>>> origin/master
 #container > h2 {
     text-align: center;
     margin: 0px 0px 31.8px 0px;
@@ -332,7 +329,6 @@ a {
 #score {
     position: absolute;
     right: 5%;
-    margin-top: -20px;
 }
 
 .answers {
