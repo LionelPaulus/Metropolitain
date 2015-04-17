@@ -329,6 +329,7 @@ a {
 #score {
     position: absolute;
     right: 5%;
+    top: 4%;
 }
 
 .answers {
